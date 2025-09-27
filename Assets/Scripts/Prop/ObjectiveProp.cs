@@ -1,3 +1,4 @@
+using EdmontonJam.Manager;
 using EdmontonJam.Player;
 using EdmontonJam.SO;
 using Sketch.FPS;
@@ -38,6 +39,8 @@ namespace EdmontonJam.Prop
             var cpc = (CustomPlayerController)pc;
 
             cpc.HoldObject(this);
+
+            NoiseManager.Instance.SpawnNoise(transform.position, _info.AttachedNoise);
         }
 
         public string InteractionVerb(PlayerController pc)

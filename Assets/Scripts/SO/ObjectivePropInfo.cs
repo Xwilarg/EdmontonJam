@@ -6,5 +6,7 @@ namespace EdmontonJam.SO
     public class ObjectivePropInfo : ScriptableObject
     {
         public GameObject Model;
+
+        public NoiseInfo AttachedNoise;
     }
 }

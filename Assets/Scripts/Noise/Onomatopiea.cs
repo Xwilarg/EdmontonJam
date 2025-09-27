@@ -1,4 +1,5 @@
 using EdmontonJam.Grandma;
+using EdmontonJam.SO;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,6 +11,7 @@ namespace EdmontonJam.Noise
     [RequireComponent(typeof(NavMeshAgent))]
     public class Onomatopiea : MonoBehaviour
     {
+        public NoiseInfo NoiseInfo { set; get; }
 
         [Header("Animation")]
 

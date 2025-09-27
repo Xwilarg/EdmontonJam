@@ -33,7 +33,10 @@ namespace EdmontonJam.Manager
             Instance = this;
 
             Translate.Instance.SetLanguages(new string[] { "english", "french" });
+        }
 
+        private void Start()
+        {
             var mixedProps = _props.OrderBy(x => Random.value).ToArray();
             var spots = GameObject.FindObjectsByType<ObjectiveProp>(FindObjectsSortMode.None);
 

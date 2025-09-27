@@ -1,4 +1,5 @@
 using EdmontonJam.Noise;
+using EdmontonJam.SO;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,17 +20,32 @@ namespace EdmontonJam.Grandma
 
         public static GrandmaController instance;
 
+        // Info of the noise we are currently chasing
+        private NoiseInfo _noiseInfo;
+
         /// <summary>
         /// Grandma AI's state machine
         /// </summary>
-        public enum State
+        public enum BehaviorsState
         {
             wandering,
             chasingNoise,
             examiningNoise
         }
-        public State state = State.wandering;
-        State oldState = State.wandering;   // (For seeing when state changed)
+        private BehaviorsState _state = BehaviorsState.wandering;
+        public BehaviorsState State
+        {
+            set
+            {
+                if (value != BehaviorsState.chasingNoise)
+                {
+                    _noiseInfo = null;
+                }
+                _state = value;
+            }
+            get => _state;
+        }
+        BehaviorsState oldState = BehaviorsState.wandering;   // (For seeing when state changed)
 
         void Awake()
         {
@@ -40,12 +56,6 @@ namespace EdmontonJam.Grandma
             instance = this;
         }
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-
-        }
-
         float wanderTimer = 0;
         float noiseChaseTimer = 0;
         float examineNoiseTimer = 0;
@@ -53,12 +63,12 @@ namespace EdmontonJam.Grandma
         // Update is called once per frame
         void Update()
         {
-            State tempOldState = state;
+            BehaviorsState tempOldState = State;
 
-            if (state is State.wandering)
+            if (State is BehaviorsState.wandering)
             {
                 // wander around randomly (but with predictable timing)
-                if (oldState != State.wandering)
+                if (oldState != BehaviorsState.wandering)
                     wanderTimer = 1000; // to reset target
 
                 agent.acceleration = wanderAcceleration;
@@ -76,25 +86,26 @@ namespace EdmontonJam.Grandma
 
                 }
             }
-            else if (state is State.chasingNoise)
+            else if (State is BehaviorsState.chasingNoise)
             {
-                if (targetPosition != Vector3.zero)
+                if (targetPosition != null)
                 {
-                    agent.SetDestination(targetPosition);
+                    agent.SetDestination(targetPosition.Value);
                 }
                 else
                 {
                     Debug.LogWarning("targetPosition not set! Can't chase noise!");
-                    state = State.wandering;
+                    State = BehaviorsState.wandering;
+                    return;
                 }
 
                 agent.acceleration = wanderAcceleration * chaseSpeedMultiplier;
                 agent.speed = wanderSpeed * chaseSpeedMultiplier;
                 agent.angularSpeed = wanderAngularSpeed * chaseSpeedMultiplier;
 
-                if (Vector3.Distance(targetPosition, transform.position) < 2.5f)
+                if (Vector3.Distance(targetPosition.Value, transform.position) < 2.5f)
                 {
-                    state = State.examiningNoise;
+                    State = BehaviorsState.examiningNoise;
                     examineNoiseTimer = 3;
                 }
 
@@ -102,16 +113,16 @@ namespace EdmontonJam.Grandma
                 if (noiseChaseTimer <= 0)   // So she doesn't get stuck chasing one out of bounds noise forever
                 {
                     // TODO an animation for forgetting what she was doing..? Eh
-                    state = State.wandering;
+                    State = BehaviorsState.wandering;
                 }
             }
-            else if (state is State.examiningNoise)
+            else if (State is BehaviorsState.examiningNoise)
             {
                 // TODO an examining animation
 
                 examineNoiseTimer -= Time.deltaTime;
                 if (examineNoiseTimer <= 0)
-                    state = State.wandering;
+                    State = BehaviorsState.wandering;
             }
 
             oldState = tempOldState;
@@ -128,7 +139,7 @@ namespace EdmontonJam.Grandma
             return triangles.vertices[indice];
         }
 
-        public Vector3 targetPosition;
+        public Vector3? targetPosition;
 
         /// <summary>
         /// Grandma got alerted to a noise! She'll chase it!
@@ -136,12 +147,18 @@ namespace EdmontonJam.Grandma
         /// <param name="noise"></param>
         public void noiseAlert(Onomatopiea noise)
         {
+            if (State == BehaviorsState.chasingNoise && noise.NoiseInfo.NoiseForce < _noiseInfo.NoiseForce) // We received a noise but we are already chasing a more important one
+            {
+                return;
+            }
+
+            _noiseInfo = noise.NoiseInfo;
             targetPosition = noise.noiseSourcePosition;
             print("noiseAlert " + targetPosition);
             // Todo play a grandma alert animation/screech etc
 
             noiseChaseTimer = 10f;
-            state = State.chasingNoise;
+            State = BehaviorsState.chasingNoise;
         }
     }
 }
