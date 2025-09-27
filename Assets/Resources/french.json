@@ -1,3 +1,8 @@
 {
-    "language": "Français"
+    "language": "Français",
+
+    "interactionText": "Appuyez sur {0} pour {1}",
+    "alreadyHold": "Vous tenez déjà un objet",
+
+    "interaction_take": "prendre"
 }
