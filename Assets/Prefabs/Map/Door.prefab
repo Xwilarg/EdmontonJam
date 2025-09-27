@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7303840457763310829}
   - component: {fileID: 4057975343222525902}
   - component: {fileID: 8200082521245445124}
+  - component: {fileID: 3372818785049850220}
   m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
@@ -166,6 +167,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3372818785049850220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3697421935947159559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dc377f70588e342aa51733298722d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Prop.Door
+  _noiseInfo: {fileID: 11400000, guid: 2d60bb4b9fae04747bb381a99f6cb0ae, type: 2}
 --- !u!1001 &606635821765743448
 PrefabInstance:
   m_ObjectHideFlags: 0
