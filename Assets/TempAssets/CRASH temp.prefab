@@ -155,13 +155,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6824729107956247820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3cbbaee9c62fe74d91472d448f3ec33, type: 3}
+  m_Script: {fileID: 11500000, guid: e1abc90aab3ea1a4fbf3b2f3856fb7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Noise
-  bounceSpeed: 2.5
-  bounceAmount: 0.267
+  bounceSpeed: 1.5
+  bounceAmount: 0.3
   noiseRenderObject: {fileID: 0}
-  grandmaChaser: 0
+  grandmaChaser: 1
   hoverHeight: 2
   chaseSpeed: 20
   turnSpeed: 1000
