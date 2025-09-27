@@ -16,16 +16,25 @@ namespace EdmontonJam.Manager
             Instance = this;
         }
 
+        private void SetMaterial(GameObject go, Material mat)
+        {
+            go.GetComponentInChildren<Renderer>().material = mat;
+        }
+
         public void SpawnNoise(Vector3 startPos, NoiseInfo nInfo)
         {
             startPos.y = 1f;
 
-            var chaserNoise = Instantiate(_noisePrefab, startPos, Quaternion.identity).GetComponent<Onomatopiea>();
-            chaserNoise.grandmaChaser = true;
+            var go = Instantiate(_noisePrefab, startPos, Quaternion.identity);
+            var chaserNoise = go.GetComponent<Onomatopiea>();
+            chaserNoise.GrandmaChaser = true;
             chaserNoise.noiseSourcePosition = startPos;
             chaserNoise.NoiseInfo = nInfo;
+            SetMaterial(go, nInfo.Material);
 
-            Instantiate(_noisePrefab, startPos, Quaternion.identity).GetComponent<Onomatopiea>().NoiseInfo = nInfo;
+            go = Instantiate(_noisePrefab, startPos, Quaternion.identity);
+            go.GetComponent<Onomatopiea>().NoiseInfo = nInfo;
+            SetMaterial(go, nInfo.Material);
         }
     }
 }

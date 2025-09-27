@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: SampleObjectiveNoise
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.SO.NoiseInfo
   NoiseForce: 10
+  Material: {fileID: 2100000, guid: 4cf9f6964ddecf34984ea4f361961a08, type: 2}

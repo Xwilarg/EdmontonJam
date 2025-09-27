@@ -6,5 +6,6 @@ namespace EdmontonJam.SO
     public class NoiseInfo : ScriptableObject
     {
         public float NoiseForce;
+        public Material Material;
     }
 }

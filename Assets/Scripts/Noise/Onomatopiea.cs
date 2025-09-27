@@ -26,10 +26,10 @@ namespace EdmontonJam.Noise
         public Transform noiseRenderObject;     // Had to separate it because scaling the nav agent object screws it up
         Material material;  // material instance, to adjust opacity
 
-        [Header("Chase Grandma")]
-        [Tooltip("This noise will chase and alert grandma. If false, it just pops up in place to show the source of the noise")]
-        public bool grandmaChaser;
+        // This noise will chase and alert grandma. If false, it just pops up in place to show the source of the noise
+        public bool GrandmaChaser { set; get; }
 
+        [Header("Chase Grandma")]
         public float hoverHeight = 2f;
 
         public float chaseSpeed = 20f;
@@ -99,9 +99,8 @@ namespace EdmontonJam.Noise
                     animate = 0;
             }
 
-
             // chasing
-            if (grandmaChaser)
+            if (GrandmaChaser)
             {
                 if (GrandmaController.instance == null)
                     Debug.LogWarning("Grandma not spawned in scene!");
