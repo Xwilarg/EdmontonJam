@@ -1,4 +1,7 @@
+using EdmontonJam.Prop;
+using EdmontonJam.SO;
 using Sketch.Translation;
+using System.Linq;
 using UnityEngine;
 
 namespace EdmontonJam.Manager
@@ -9,11 +12,31 @@ namespace EdmontonJam.Manager
 
         public bool IsChasing { set; get; }
 
+        [SerializeField]
+        private ObjectivePropInfo[] _props;
+
         private void Awake()
         {
             Instance = this;
 
             Translate.Instance.SetLanguages(new string[] { "english", "french" });
+
+            var mixedProps = _props.OrderBy(x => Random.value).ToArray();
+            var spots = GameObject.FindObjectsByType<ObjectiveProp>(FindObjectsSortMode.None);
+
+            if (spots.Length > mixedProps.Length)
+            {
+                spots = spots.OrderBy(x => Random.value).Take(mixedProps.Length).ToArray();
+            }
+            else if (mixedProps.Length > spots.Length)
+            {
+                mixedProps = mixedProps.Take(spots.Length).ToArray();
+            }
+
+            for (int i = 0; i < spots.Length; i++)
+            {
+                spots[i].InitPropInfo(mixedProps[i]);
+            }
         }
     }
 }

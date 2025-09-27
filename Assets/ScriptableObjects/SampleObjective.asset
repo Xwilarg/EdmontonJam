@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5217305cee252944aa06f3a2b4ce32e5, type: 3}
+  m_Name: SampleObjective
+  m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.SO.ObjectivePropInfo
+  Model: {fileID: 2819262572201314861, guid: 7f6de937663447048b7734d15d3a1510, type: 3}

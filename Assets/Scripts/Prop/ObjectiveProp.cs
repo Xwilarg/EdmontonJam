@@ -1,11 +1,24 @@
 using EdmontonJam.Player;
+using EdmontonJam.SO;
 using Sketch.FPS;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace EdmontonJam.Prop
 {
     public class ObjectiveProp : MonoBehaviour, IInteractable
     {
+        private ObjectivePropInfo _info;
+
+        public void InitPropInfo(ObjectivePropInfo info)
+        {
+            Assert.IsNull(info);
+
+            _info = info;
+            var go = Instantiate(info.Model, transform);
+            go.transform.position = Vector3.zero;
+        }
+
         public GameObject GameObject => gameObject;
 
         public bool CanInteract(PlayerController pc)
