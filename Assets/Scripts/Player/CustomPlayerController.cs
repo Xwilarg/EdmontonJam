@@ -11,8 +11,7 @@ namespace EdmontonJam.Player
 
         public override string GetInteractionText(string interactionVerb)
         {
-            Debug.Log(_pInput.currentControlScheme);
-            return Translate.Instance.Tr("interactionText", "", Translate.Instance.Tr(interactionVerb));
+            return Translate.Instance.Tr("interactionText", _pInput.currentControlScheme == "Keyboard&Mouse" ? "E" : Translate.Instance.Tr("southButton"), Translate.Instance.Tr(interactionVerb));
         }
 
         public override string GetDenyText(string denySentence)

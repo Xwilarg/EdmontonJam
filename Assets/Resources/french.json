@@ -3,6 +3,7 @@
 
     "interactionText": "Appuyez sur {0} pour {1}",
     "alreadyHold": "Vous tenez déjà un objet",
+    "southButton": "button du bas",
 
     "interaction_take": "prendre"
 }
