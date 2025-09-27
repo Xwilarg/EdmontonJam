@@ -21,17 +21,20 @@ namespace EdmontonJam.Manager
             go.GetComponentInChildren<Renderer>().material = mat;
         }
 
-        public void SpawnNoise(Vector3 startPos, NoiseInfo nInfo)
+        public void SpawnNoise(Vector3 startPos, NoiseInfo nInfo, bool chase = true)
         {
             startPos.y = 1f;
 
-            var go = Instantiate(_noisePrefab, startPos, Quaternion.identity);
-            var chaserNoise = go.GetComponent<Onomatopiea>();
-            chaserNoise.GrandmaChaser = true;
-            chaserNoise.noiseSourcePosition = startPos;
-            chaserNoise.NoiseInfo = nInfo;
-            SetMaterial(go, nInfo.Material);
-            go.transform.localScale = Vector3.one * (Mathf.Clamp01(nInfo.NoiseForce / 5f) / 2 + .5f);
+            if (chase)
+            {
+                var go = Instantiate(_noisePrefab, startPos, Quaternion.identity);
+                var chaserNoise = go.GetComponent<Onomatopiea>();
+                chaserNoise.GrandmaChaser = true;
+                chaserNoise.noiseSourcePosition = startPos;
+                chaserNoise.NoiseInfo = nInfo;
+                SetMaterial(go, nInfo.Material);
+                go.transform.localScale = Vector3.one * (Mathf.Clamp01(nInfo.NoiseForce / 5f) / 2 + .5f);
+            }
 
             go = Instantiate(_noisePrefab, startPos, Quaternion.identity);
             go.GetComponent<Onomatopiea>().NoiseInfo = nInfo;
