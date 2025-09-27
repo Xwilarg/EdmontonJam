@@ -23,7 +23,7 @@ namespace EdmontonJam.Prop
             {
                 _noiseTimer -= Time.deltaTime;
             }
-            else if (_rb.angularVelocity.magnitude > 0f)
+            else if (_rb.angularVelocity.magnitude > ResourceManager.Instance.GameInfo.MinDoorMagnitudeForNoise)
             {
                 _noiseTimer = .5f;
 

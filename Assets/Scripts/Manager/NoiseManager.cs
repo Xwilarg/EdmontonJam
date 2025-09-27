@@ -31,10 +31,12 @@ namespace EdmontonJam.Manager
             chaserNoise.noiseSourcePosition = startPos;
             chaserNoise.NoiseInfo = nInfo;
             SetMaterial(go, nInfo.Material);
+            go.transform.localScale = Vector3.one * (Mathf.Clamp01(nInfo.NoiseForce / 5f) / 2 + .5f);
 
             go = Instantiate(_noisePrefab, startPos, Quaternion.identity);
             go.GetComponent<Onomatopiea>().NoiseInfo = nInfo;
             SetMaterial(go, nInfo.Material);
+            go.transform.localScale = Vector3.one * (Mathf.Clamp01(nInfo.NoiseForce / 5f) / 2 + .5f);
         }
     }
 }

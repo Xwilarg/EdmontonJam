@@ -6,5 +6,6 @@ namespace EdmontonJam.SO
     public class GameInfo : ScriptableObject
     {
         public float LockpickReloadTime;
+        public float MinDoorMagnitudeForNoise;
     }
 }
