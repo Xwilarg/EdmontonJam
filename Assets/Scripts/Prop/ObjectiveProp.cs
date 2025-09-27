@@ -12,11 +12,11 @@ namespace EdmontonJam.Prop
 
         public void InitPropInfo(ObjectivePropInfo info)
         {
-            Assert.IsNull(info);
+            Assert.IsNull(_info);
 
             _info = info;
             var go = Instantiate(info.Model, transform);
-            go.transform.position = Vector3.zero;
+            go.transform.localPosition = Vector3.zero;
         }
 
         public GameObject GameObject => gameObject;
