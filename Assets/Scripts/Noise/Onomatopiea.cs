@@ -117,6 +117,7 @@ namespace EdmontonJam.Noise
                     {
                         caughtGrandmaTimer = .1f;
 
+                        Debug.Break();
                         gran.noiseAlert(this);
                     }
 
