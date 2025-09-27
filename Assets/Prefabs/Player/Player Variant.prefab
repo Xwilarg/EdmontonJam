@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59b4d002c24b754880ffc244517eb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Player.CustomPlayerController
-  _mouvementSpeed: 5
+  _mouvementSpeed: 7.5
   _horizontalSensitivity: 0.1
   _verticalSensitivity: 0.1
   _controllerSensitivity: 750
