@@ -3,10 +3,10 @@ using EdmontonJam.Noise;
 using EdmontonJam.Player;
 using EdmontonJam.SO;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions;
-using UnityEngine.UIElements;
 
 namespace EdmontonJam.Grandma
 {
@@ -232,6 +232,7 @@ namespace EdmontonJam.Grandma
                     {
                         // LoS lost
                         State = BehaviorsState.wandering;
+                        _players.First(x => x.PlayerGO.GetInstanceID() == _chasedPlayer.gameObject.GetInstanceID()).IgnoreTimer = 5f;
                         _chasedPlayer = null;
                     }
                 }
