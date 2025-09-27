@@ -3,6 +3,7 @@ using EdmontonJam.SO;
 using Sketch.Translation;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace EdmontonJam.Manager
 {
@@ -10,7 +11,19 @@ namespace EdmontonJam.Manager
     {
         public static GameManager Instance { private set; get; }
 
-        public bool IsChasing { set; get; }
+        private bool _isChasing;
+        public bool IsChasing
+        {
+            set
+            {
+                if (value)
+                {
+                    GetComponent<PlayerInputManager>().DisableJoining();
+                }
+                _isChasing = value;
+            }
+            get => _isChasing;
+        }
 
         [SerializeField]
         private ObjectivePropInfo[] _props;
