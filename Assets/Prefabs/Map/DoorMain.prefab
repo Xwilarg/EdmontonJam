@@ -133,8 +133,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.016256198, y: 0.0028429434, z: 0.037967686}
-  m_Center: {x: -0.0079942485, y: -0.0001264261, z: 0.018999554}
+  m_Size: {x: 0.016256198, y: 0.0028429436, z: 0.036993686}
+  m_Center: {x: -0.0079942485, y: -0.00012642602, z: 0.019486554}
 --- !u!1 &6766201271835967661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7826780063717477281, guid: c3fbcbf08fe324746845947b711925c4, type: 3}
@@ -186,8 +186,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.016039262, y: 0.0024215297, z: 0.037967686}
-  m_Center: {x: 0.008058798, y: -0.0002528532, z: 0.018999554}
+  m_Size: {x: 0.016039262, y: 0.0024215297, z: 0.037156936}
+  m_Center: {x: 0.008058798, y: -0.00025285318, z: 0.019404931}
 --- !u!1001 &8901698107031235454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3697421935947159559, guid: 8857f812256920149a9e86c0b063560c, type: 3}
       propertyPath: m_Name
-      value: Door (1) Variant
+      value: DoorMain
       objectReference: {fileID: 0}
     - target: {fileID: 4164421486813368249, guid: 8857f812256920149a9e86c0b063560c, type: 3}
       propertyPath: m_LocalPosition.x
