@@ -85,7 +85,7 @@ namespace EdmontonJam.Player
                 p.Pick(this);
             }
 
-            if (other.CompareTag("Grandma"))
+            if (GameManager.Instance.IsChasing && other.CompareTag("Grandma"))
             {
                 var grandma = other.GetComponent<GrandmaController>();
                 if (grandma.IsCarryingSomeone) return;

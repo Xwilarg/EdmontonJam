@@ -5,5 +5,7 @@
     "alreadyHold": "You are already holding an object",
     "southButton": "down button",
 
-    "interaction_take": "take"
+    "interaction_take": "take",
+
+    "grandmaWarning": "You little whippersnapper I better not catch you"
 }

@@ -131,7 +131,7 @@ namespace EdmontonJam.Grandma
         // Update is called once per frame
         void Update()
         {
-            if (State != BehaviorsState.carryPlayerRoom && State != BehaviorsState.chasingPlayer) // No need to look for player if we are already carrying one
+            if (GameManager.Instance.IsChasing && State != BehaviorsState.carryPlayerRoom && State != BehaviorsState.chasingPlayer) // No need to look for player if we are already carrying one
             {
                 _players.RemoveAll(x => x.PlayerGO == null); // TODO
 
