@@ -214,6 +214,22 @@
       },
       "url": "https://packages.unity.com"
     },
+    "eu.zirk.sketch.common": {
+      "version": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.common",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9e06468e38e08e3d0beea3bac2bb13930c376c1b"
+    },
+    "eu.zirk.sketch.firstpersoncontroller": {
+      "version": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.firstpersoncontroller",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "eu.zirk.sketch.common": "1.0.0"
+      },
+      "hash": "9e06468e38e08e3d0beea3bac2bb13930c376c1b"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
