@@ -10,6 +10,7 @@ namespace EdmontonJam.Prop
     public class ObjectiveProp : MonoBehaviour, IInteractable
     {
         private ObjectivePropInfo _info;
+        private bool _wasTaken;
 
         public void InitPropInfo(ObjectivePropInfo info)
         {
@@ -24,6 +25,8 @@ namespace EdmontonJam.Prop
 
         public bool CanInteract(PlayerController pc)
         {
+            if (_wasTaken) return false;
+
             var cpc = (CustomPlayerController)pc;
 
             return cpc.HoldedObject == null;
@@ -31,6 +34,7 @@ namespace EdmontonJam.Prop
 
         public string DenySentence(PlayerController pc)
         {
+            if (_wasTaken) return null;
             return "alreadyHold";
         }
 
@@ -38,6 +42,7 @@ namespace EdmontonJam.Prop
         {
             var cpc = (CustomPlayerController)pc;
 
+            _wasTaken = true;
             cpc.HoldObject(this);
 
             NoiseManager.Instance.SpawnNoise(transform.position, _info.AttachedNoise);

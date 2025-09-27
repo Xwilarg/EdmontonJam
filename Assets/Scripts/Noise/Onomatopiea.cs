@@ -28,7 +28,7 @@ namespace EdmontonJam.Noise
 
         [Header("Chase Grandma")]
         [Tooltip("This noise will chase and alert grandma. If false, it just pops up in place to show the source of the noise")]
-        public bool grandmaChaser = true;
+        public bool grandmaChaser;
 
         public float hoverHeight = 2f;
 

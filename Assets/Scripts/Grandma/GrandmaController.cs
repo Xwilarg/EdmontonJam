@@ -1,3 +1,4 @@
+using EdmontonJam.Manager;
 using EdmontonJam.Noise;
 using EdmontonJam.SO;
 using UnityEngine;
@@ -147,6 +148,8 @@ namespace EdmontonJam.Grandma
         /// <param name="noise"></param>
         public void noiseAlert(Onomatopiea noise)
         {
+            if (!GameManager.Instance.IsChasing) return; // We are not in hunting phase yet
+
             if (State == BehaviorsState.chasingNoise && noise.NoiseInfo.NoiseForce < _noiseInfo.NoiseForce) // We received a noise but we are already chasing a more important one
             {
                 return;

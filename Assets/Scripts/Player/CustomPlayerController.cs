@@ -49,7 +49,6 @@ namespace EdmontonJam.Player
             p.transform.localPosition = Vector3.zero;
 
             RemoveInteraction(p);
-            p.enabled = false;
 
             if (!GameManager.Instance.IsChasing) GameManager.Instance.IsChasing = true;
         }
