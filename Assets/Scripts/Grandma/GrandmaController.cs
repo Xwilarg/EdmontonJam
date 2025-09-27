@@ -1,13 +1,18 @@
 using EdmontonJam.Manager;
 using EdmontonJam.Noise;
+using EdmontonJam.Player;
 using EdmontonJam.SO;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Assertions;
 
 namespace EdmontonJam.Grandma
 {
     public class GrandmaController : MonoBehaviour
     {
+        [SerializeField]
+        private Transform _hands;
+
         [Header("Tuning")]
         public float wanderSpeed = 2;
         public float wanderAngularSpeed = 100;
@@ -31,7 +36,8 @@ namespace EdmontonJam.Grandma
         {
             wandering,
             chasingNoise,
-            examiningNoise
+            examiningNoise,
+            carryPlayerRoom
         }
         private BehaviorsState _state = BehaviorsState.wandering;
         public BehaviorsState State
@@ -42,11 +48,28 @@ namespace EdmontonJam.Grandma
                 {
                     _noiseInfo = null;
                 }
+
+                if (value == BehaviorsState.wandering)
+                {
+                    agent.acceleration = wanderAcceleration;
+                    agent.speed = wanderSpeed;
+                    agent.angularSpeed = wanderAngularSpeed;
+                }
+                else if (value == BehaviorsState.chasingNoise || value == BehaviorsState.carryPlayerRoom)
+                {
+                    agent.acceleration = wanderAcceleration * chaseSpeedMultiplier;
+                    agent.speed = wanderSpeed * chaseSpeedMultiplier;
+                    agent.angularSpeed = wanderAngularSpeed * chaseSpeedMultiplier;
+                }
+                
                 _state = value;
             }
             get => _state;
         }
         BehaviorsState oldState = BehaviorsState.wandering;   // (For seeing when state changed)
+
+        private CustomPlayerController _carriedPlayer;
+        public bool IsCarryingSomeone => _carriedPlayer != null;
 
         void Awake()
         {
@@ -72,11 +95,6 @@ namespace EdmontonJam.Grandma
                 if (oldState != BehaviorsState.wandering)
                     wanderTimer = 1000; // to reset target
 
-                agent.acceleration = wanderAcceleration;
-                agent.speed = wanderSpeed;
-                agent.angularSpeed = wanderAngularSpeed;
-
-
                 wanderTimer += Time.deltaTime;
                 if (wanderTimer > 5)    // reset target
                 {
@@ -100,10 +118,6 @@ namespace EdmontonJam.Grandma
                     return;
                 }
 
-                agent.acceleration = wanderAcceleration * chaseSpeedMultiplier;
-                agent.speed = wanderSpeed * chaseSpeedMultiplier;
-                agent.angularSpeed = wanderAngularSpeed * chaseSpeedMultiplier;
-
                 if (Vector3.Distance(targetPosition.Value, transform.position) < 2.5f)
                 {
                     State = BehaviorsState.examiningNoise;
@@ -117,6 +131,16 @@ namespace EdmontonJam.Grandma
                     State = BehaviorsState.wandering;
                 }
             }
+            else if (State is BehaviorsState.carryPlayerRoom)
+            {
+                if (Vector3.Distance(_carriedPlayer.AttachedSpawn.transform.position, transform.position) < 2.5f)
+                {
+                    State = BehaviorsState.wandering;
+
+                    _carriedPlayer.Drop();
+                    _carriedPlayer = null;
+                }
+            }
             else if (State is BehaviorsState.examiningNoise)
             {
                 // TODO an examining animation
@@ -127,6 +151,19 @@ namespace EdmontonJam.Grandma
             }
 
             oldState = tempOldState;
+        }
+
+        public void Carry(CustomPlayerController pc)
+        {
+            Assert.IsFalse(IsCarryingSomeone);
+
+            _carriedPlayer = pc;
+            _carriedPlayer.transform.parent = _hands;
+            _carriedPlayer.transform.localPosition = Vector3.zero;
+
+            State = BehaviorsState.carryPlayerRoom;
+
+            agent.SetDestination(pc.AttachedSpawn.transform.position);
         }
 
         public Vector3 getRandomNavmeshPoint()
@@ -149,6 +186,11 @@ namespace EdmontonJam.Grandma
         public void noiseAlert(Onomatopiea noise)
         {
             if (!GameManager.Instance.IsChasing) return; // We are not in hunting phase yet
+
+            if (State == BehaviorsState.carryPlayerRoom) // Carrying a player is more important than a noise!
+            {
+                return;
+            }
 
             if (State == BehaviorsState.chasingNoise && noise.NoiseInfo.NoiseForce < _noiseInfo.NoiseForce) // We received a noise but we are already chasing a more important one
             {

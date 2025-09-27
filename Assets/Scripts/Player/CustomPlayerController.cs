@@ -1,3 +1,4 @@
+using EdmontonJam.Grandma;
 using EdmontonJam.Manager;
 using EdmontonJam.Prop;
 using Sketch.FPS;
@@ -16,15 +17,22 @@ namespace EdmontonJam.Player
         [SerializeField]
         private TMP_Text _lockpickText;
 
+        private CharacterController _cc;
+
         public ObjectiveProp HoldedObject { set; get; }
 
         public SpawnPoint AttachedSpawn { set; get; }
 
         private int _lockpickCount;
 
+        private bool _isActive = true;
+        public override bool IsActive => _isActive;
+
         protected override void Awake()
         {
             base.Awake();
+
+            _cc = GetComponent<CharacterController>();
 
             UpdateUI();
         }
@@ -53,6 +61,13 @@ namespace EdmontonJam.Player
             if (!GameManager.Instance.IsChasing) GameManager.Instance.IsChasing = true;
         }
 
+        public void Drop()
+        {
+            _cc.enabled = true;
+            _isActive = true;
+            transform.parent = null;
+        }
+
         public override string GetInteractionText(string interactionVerb)
         {
             return Translate.Instance.Tr("interactionText", _pInput.currentControlScheme == "Keyboard&Mouse" ? "E" : Translate.Instance.Tr("southButton"), Translate.Instance.Tr(interactionVerb));
@@ -68,6 +83,17 @@ namespace EdmontonJam.Player
             if (other.TryGetComponent<IPickable>(out var p))
             {
                 p.Pick(this);
+            }
+
+            if (other.CompareTag("Grandma"))
+            {
+                var grandma = other.GetComponent<GrandmaController>();
+                if (grandma.IsCarryingSomeone) return;
+
+                _cc.enabled = false;
+                _isActive = false;
+                transform.rotation = other.transform.rotation;
+                grandma.Carry(this);
             }
         }
     }
