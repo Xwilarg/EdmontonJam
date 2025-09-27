@@ -22,7 +22,7 @@ namespace EdmontonJam.Manager
 
             var chaserNoise = Instantiate(_noisePrefab, startPos, Quaternion.identity).GetComponent<Onomatopiea>();
             chaserNoise.grandmaChaser = true;
-            chaserNoise.noiseSourcePosition = transform.position;
+            chaserNoise.noiseSourcePosition = startPos;
             chaserNoise.NoiseInfo = nInfo;
 
             Instantiate(_noisePrefab, startPos, Quaternion.identity).GetComponent<Onomatopiea>().NoiseInfo = nInfo;
