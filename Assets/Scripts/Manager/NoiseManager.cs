@@ -1,5 +1,6 @@
 using EdmontonJam.Noise;
 using EdmontonJam.SO;
+using Unity.Properties;
 using UnityEngine;
 
 namespace EdmontonJam.Manager
@@ -25,9 +26,10 @@ namespace EdmontonJam.Manager
         {
             startPos.y = 1f;
 
+            GameObject go;
             if (chase)
             {
-                var go = Instantiate(_noisePrefab, startPos, Quaternion.identity);
+                go = Instantiate(_noisePrefab, startPos, Quaternion.identity);
                 var chaserNoise = go.GetComponent<Onomatopiea>();
                 chaserNoise.GrandmaChaser = true;
                 chaserNoise.noiseSourcePosition = startPos;
