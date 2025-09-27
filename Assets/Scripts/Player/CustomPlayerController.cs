@@ -14,6 +14,8 @@ namespace EdmontonJam.Player
 
         public ObjectiveProp HoldedObject { set; get; }
 
+        public SpawnPoint AttachedSpawn { set; get; }
+
         public void HoldObject(ObjectiveProp p)
         {
             Assert.IsNull(HoldedObject);
