@@ -348,23 +348,23 @@ PrefabInstance:
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2001505282425262849}
+      objectReference: {fileID: 8905057490080161709}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2001505282425262849}
+      objectReference: {fileID: 8905057490080161709}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2001505282425262849}
+      objectReference: {fileID: 8905057490080161709}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2001505282425262849}
+      objectReference: {fileID: 8905057490080161709}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2001505282425262849}
+      objectReference: {fileID: 8905057490080161709}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnMovement
@@ -387,23 +387,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Sketch.FPS.PlayerController, xwilarg.eu.zirk.sketch.firstpersoncontroller
+      value: EdmontonJam.Player.CustomPlayerController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Sketch.FPS.PlayerController, xwilarg.eu.zirk.sketch.firstpersoncontroller
+      value: EdmontonJam.Player.CustomPlayerController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Sketch.FPS.PlayerController, xwilarg.eu.zirk.sketch.firstpersoncontroller
+      value: EdmontonJam.Player.CustomPlayerController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Sketch.FPS.PlayerController, xwilarg.eu.zirk.sketch.firstpersoncontroller
+      value: EdmontonJam.Player.CustomPlayerController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Sketch.FPS.PlayerController, xwilarg.eu.zirk.sketch.firstpersoncontroller
+      value: EdmontonJam.Player.CustomPlayerController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -469,34 +469,90 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5281281372893146217, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5309379856814012307, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7285970548999368221, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
+    - {fileID: 79024464993118885, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2318909568991414244, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4969758789949108337}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5281281372893146217, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8905057490080161709}
     - targetCorrespondingSourceObject: {fileID: 5179004131544224430, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3513849158787000048}
   m_SourcePrefab: {fileID: 100100000, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
---- !u!114 &2001505282425262849 stripped
+--- !u!114 &1437394078349131134 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 79024464993118885, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
+  m_CorrespondingSourceObject: {fileID: 661079623806977242, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
   m_PrefabInstance: {fileID: 1935991650689776036}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f5737a1a5bfed499cc17c588590562, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &3709324980868922555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3000573060241736991, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
+  m_PrefabInstance: {fileID: 1935991650689776036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4247015195819425344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2318909568991414244, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
   m_PrefabInstance: {fileID: 1935991650689776036}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5705625752132881557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6192575117345682737, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
+  m_PrefabInstance: {fileID: 1935991650689776036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c9428129fcb8544aa413e396e45e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6022692913112323533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5281281372893146217, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
+  m_PrefabInstance: {fileID: 1935991650689776036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8905057490080161709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022692913112323533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59b4d002c24b754880ffc244517eb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Player.CustomPlayerController
+  _mouvementSpeed: 5
+  _horizontalSensitivity: 0.1
+  _verticalSensitivity: 0.1
+  _controllerSensitivity: 750
+  _runningMultiplier: 1.5
+  _jumpForce: 2
+  _gravityMultiplier: 0.75
+  _head: {fileID: 3709324980868922555}
+  _pInput: {fileID: 1437394078349131134}
+  _triggerArea: {fileID: 5705625752132881557}
+  _interactionText: {fileID: 0}
 --- !u!20 &6038245931653402754 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5265322079990475046, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
