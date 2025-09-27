@@ -2,6 +2,7 @@ using EdmontonJam.Manager;
 using EdmontonJam.Prop;
 using Sketch.FPS;
 using Sketch.Translation;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -12,9 +13,26 @@ namespace EdmontonJam.Player
         [SerializeField]
         private Transform _hands;
 
+        [SerializeField]
+        private TMP_Text _lockpickText;
+
         public ObjectiveProp HoldedObject { set; get; }
 
         public SpawnPoint AttachedSpawn { set; get; }
+
+        private int _lockpickCount;
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            _lockpickText.text = _lockpickCount.ToString();
+        }
 
         public void HoldObject(ObjectiveProp p)
         {
