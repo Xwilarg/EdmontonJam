@@ -29,6 +29,12 @@ namespace EdmontonJam.Player
             UpdateUI();
         }
 
+        public void GrabLockpick()
+        {
+            _lockpickCount++;
+            UpdateUI();
+        }
+
         private void UpdateUI()
         {
             _lockpickText.text = _lockpickCount.ToString();
