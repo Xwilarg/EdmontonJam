@@ -24,6 +24,7 @@ namespace EdmontonJam.Manager
             cc.enabled = false;
             var targetSpawn = _spawnPoints[_spawnId++ % _spawnPoints.Length];
             p.transform.parent.position = targetSpawn.transform.position;
+            p.transform.rotation = targetSpawn.transform.rotation;
             cc.enabled = true;
 
             cc.GetComponent<CustomPlayerController>().AttachedSpawn = targetSpawn;
