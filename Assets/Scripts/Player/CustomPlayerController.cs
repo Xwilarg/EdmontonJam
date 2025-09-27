@@ -63,5 +63,13 @@ namespace EdmontonJam.Player
         {
             return Translate.Instance.Tr(denySentence);
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent<IPickable>(out var p))
+            {
+                p.Pick(this);
+            }
+        }
     }
 }

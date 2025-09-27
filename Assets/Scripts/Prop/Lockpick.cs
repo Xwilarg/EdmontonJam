@@ -10,6 +10,14 @@ namespace EdmontonJam.Prop
         [SerializeField]
         private GameObject _model;
 
+        [SerializeField]
+        private float _rotSpeed;
+
+        private void Update()
+        {
+            transform.Rotate(Vector3.up, Time.deltaTime * _rotSpeed);
+        }
+
         public void Pick(CustomPlayerController cpc)
         {
             cpc.GrabLockpick();

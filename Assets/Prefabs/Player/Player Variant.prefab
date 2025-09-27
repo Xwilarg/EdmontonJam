@@ -1040,9 +1040,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5281281372893146217, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8905057490080161709}
-    - targetCorrespondingSourceObject: {fileID: 5281281372893146217, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8080659308901787309}
     - targetCorrespondingSourceObject: {fileID: 5179004131544224430, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3513849158787000048}
@@ -1109,33 +1106,6 @@ MonoBehaviour:
   _interactionText: {fileID: 4440104934062455976}
   _hands: {fileID: 6907445081375814605}
   _lockpickText: {fileID: 3791202181436512527}
---- !u!54 &8080659308901787309
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6022692913112323533}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!20 &6038245931653402754 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5265322079990475046, guid: ddc5a7c6f584d76469c8ee20250d3a04, type: 3}
