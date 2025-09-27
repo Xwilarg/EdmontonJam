@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameInfo
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.SO.GameInfo
   LockpickReloadTime: 5
+  MinDoorMagnitudeForNoise: 0.1

@@ -5,5 +5,7 @@
     "alreadyHold": "Vous tenez déjà un objet",
     "southButton": "button du bas",
 
-    "interaction_take": "prendre"
+    "interaction_take": "prendre",
+
+    "grandmaWarning": "Petits chenapans, vous allez voir si je vous attrape"
 }

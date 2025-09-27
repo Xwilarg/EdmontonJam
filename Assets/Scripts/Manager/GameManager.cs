@@ -19,6 +19,7 @@ namespace EdmontonJam.Manager
                 if (value)
                 {
                     GetComponent<PlayerInputManager>().DisableJoining();
+                    ResourceManager.Instance.SetWarningText();
                 }
                 _isChasing = value;
             }
