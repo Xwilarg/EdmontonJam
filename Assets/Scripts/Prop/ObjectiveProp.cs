@@ -45,7 +45,7 @@ namespace EdmontonJam.Prop
             _wasTaken = true;
             cpc.HoldObject(this);
 
-            NoiseManager.Instance.SpawnNoise(transform.position, _info.AttachedNoise);
+            NoiseManager.Instance.SpawnNoise(transform.position, _info.AttachedNoise, null);
         }
 
         public string InteractionVerb(PlayerController pc)

@@ -36,6 +36,7 @@ namespace EdmontonJam.Grandma
         public static GrandmaController instance;
 
         // Info of the noise we are currently chasing
+        private Onomatopiea _ono;
         private NoiseInfo _noiseInfo;
 
         private readonly List<PlayerChaseInfo> _players = new();
@@ -188,6 +189,7 @@ namespace EdmontonJam.Grandma
                 {
                     State = BehaviorsState.examiningNoise;
                     examineNoiseTimer = 3;
+                    _ono.Source.StunNoiseReporting(5f);
                 }
 
                 noiseChaseTimer -= Time.deltaTime;
@@ -285,6 +287,7 @@ namespace EdmontonJam.Grandma
                 return;
             }
 
+            _ono = noise;
             _noiseInfo = noise.NoiseInfo;
             targetPosition = noise.noiseSourcePosition;
             print("noiseAlert " + targetPosition);

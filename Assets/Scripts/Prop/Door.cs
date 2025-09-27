@@ -35,11 +35,11 @@ namespace EdmontonJam.Prop
             {
                 _noiseTimer -= Time.deltaTime;
             }
-            else if (_rb.angularVelocity.magnitude > ResourceManager.Instance.GameInfo.MinDoorMagnitudeForNoise && _disllowEmitTimer <= 0f)
+            else if (_rb.angularVelocity.magnitude > ResourceManager.Instance.GameInfo.MinDoorMagnitudeForNoise)
             {
                 _noiseTimer = .5f;
 
-                NoiseManager.Instance.SpawnNoise(transform.position, _noiseInfo);
+                NoiseManager.Instance.SpawnNoise(transform.position, _noiseInfo, this, _disllowEmitTimer <= 0f);
             }
         }
     }
