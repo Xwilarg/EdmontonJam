@@ -1,5 +1,5 @@
+using EdmontonJam.Grandma;
 using EdmontonJam.Player;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,6 +28,8 @@ namespace EdmontonJam.Manager
             cc.enabled = true;
 
             cc.GetComponent<CustomPlayerController>().AttachedSpawn = targetSpawn;
+
+            GrandmaController.instance.Register(cc.GetComponent<CustomPlayerController>());
         }
     }
 }

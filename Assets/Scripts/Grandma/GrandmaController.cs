@@ -2,14 +2,23 @@ using EdmontonJam.Manager;
 using EdmontonJam.Noise;
 using EdmontonJam.Player;
 using EdmontonJam.SO;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions;
+using UnityEngine.UIElements;
 
 namespace EdmontonJam.Grandma
 {
     public class GrandmaController : MonoBehaviour
     {
+        private class PlayerChaseInfo
+        {
+            public CustomPlayerController Player;
+            public GameObject PlayerGO;
+            public float IgnoreTimer;
+        }
+
         [SerializeField]
         private Transform _hands;
 
@@ -29,6 +38,8 @@ namespace EdmontonJam.Grandma
         // Info of the noise we are currently chasing
         private NoiseInfo _noiseInfo;
 
+        private readonly List<PlayerChaseInfo> _players = new();
+
         /// <summary>
         /// Grandma AI's state machine
         /// </summary>
@@ -37,7 +48,8 @@ namespace EdmontonJam.Grandma
             wandering,
             chasingNoise,
             examiningNoise,
-            carryPlayerRoom
+            carryPlayerRoom,
+            chasingPlayer
         }
         private BehaviorsState _state = BehaviorsState.wandering;
         public BehaviorsState State
@@ -55,7 +67,7 @@ namespace EdmontonJam.Grandma
                     agent.speed = wanderSpeed;
                     agent.angularSpeed = wanderAngularSpeed;
                 }
-                else if (value == BehaviorsState.chasingNoise || value == BehaviorsState.carryPlayerRoom)
+                else if (value == BehaviorsState.chasingNoise || value == BehaviorsState.carryPlayerRoom || value == BehaviorsState.chasingPlayer)
                 {
                     agent.acceleration = wanderAcceleration * chaseSpeedMultiplier;
                     agent.speed = wanderSpeed * chaseSpeedMultiplier;
@@ -68,8 +80,17 @@ namespace EdmontonJam.Grandma
         }
         BehaviorsState oldState = BehaviorsState.wandering;   // (For seeing when state changed)
 
-        private CustomPlayerController _carriedPlayer;
+        private CustomPlayerController _carriedPlayer, _chasedPlayer;
         public bool IsCarryingSomeone => _carriedPlayer != null;
+
+        public void Register(CustomPlayerController player)
+        {
+            _players.Add(new()
+            {
+                Player = player,
+                PlayerGO = player.gameObject
+            });
+        }
 
         void Awake()
         {
@@ -83,10 +104,55 @@ namespace EdmontonJam.Grandma
         float wanderTimer = 0;
         float noiseChaseTimer = 0;
         float examineNoiseTimer = 0;
+        float chasingTimer = 0;
+        private const float ChasingTimerRef = 1f;
+
+        private void OnDrawGizmos()
+        {
+            foreach (var player in _players)
+            {
+                if (player.IgnoreTimer <= 0f)
+                {
+                    if (Physics.Linecast(transform.position, player.PlayerGO.transform.position, LayerMask.GetMask("Map", "Prop")))
+                    {
+                        Physics.Raycast(transform.position, player.PlayerGO.transform.position - transform.position, out var hit, float.MaxValue, LayerMask.GetMask("Map", "Prop"));
+                        Gizmos.color = Color.red;
+                        Gizmos.DrawLine(transform.position, hit.point);
+                    }
+                    else
+                    {
+                        Gizmos.color = Color.green;
+                        Gizmos.DrawLine(transform.position, player.PlayerGO.transform.position);
+                    }
+                }
+            }
+        }
 
         // Update is called once per frame
         void Update()
         {
+            if (State != BehaviorsState.carryPlayerRoom && State != BehaviorsState.chasingPlayer) // No need to look for player if we are already carrying one
+            {
+                _players.RemoveAll(x => x.PlayerGO == null); // TODO
+
+                foreach (var player in _players)
+                {
+                    if (player.IgnoreTimer > 0f) player.IgnoreTimer -= Time.deltaTime;
+                    else // Try to look at player
+                    {
+                        if (!Physics.Linecast(transform.position, player.PlayerGO.transform.position, LayerMask.GetMask("Map", "Prop"))) // We saw someone!
+                        {
+                            _chasedPlayer = player.Player;
+                            State = BehaviorsState.chasingPlayer;
+                            chasingTimer = ChasingTimerRef;
+
+                            agent.SetDestination(player.Player.transform.position);
+                            break;
+                        }
+                    }
+                }
+            }
+
             BehaviorsState tempOldState = State;
 
             if (State is BehaviorsState.wandering)
@@ -149,6 +215,27 @@ namespace EdmontonJam.Grandma
                 if (examineNoiseTimer <= 0)
                     State = BehaviorsState.wandering;
             }
+            else if (State is BehaviorsState.chasingPlayer)
+            {
+                chasingTimer -= Time.deltaTime;
+
+                if (chasingTimer <= 0f)
+                {
+                    if (!Physics.Linecast(transform.position, _chasedPlayer.transform.position, LayerMask.GetMask("Map", "Prop")))
+                    {
+                        // We still see the player
+                        chasingTimer = ChasingTimerRef;
+
+                        agent.SetDestination(_chasedPlayer.transform.position);
+                    }
+                    else
+                    {
+                        // LoS lost
+                        State = BehaviorsState.wandering;
+                        _chasedPlayer = null;
+                    }
+                }
+            }
 
             oldState = tempOldState;
         }
@@ -187,7 +274,7 @@ namespace EdmontonJam.Grandma
         {
             if (!GameManager.Instance.IsChasing) return; // We are not in hunting phase yet
 
-            if (State == BehaviorsState.carryPlayerRoom) // Carrying a player is more important than a noise!
+            if (State == BehaviorsState.carryPlayerRoom || State == BehaviorsState.chasingPlayer) // Carrying or chasing a player is more important than a noise!
             {
                 return;
             }
