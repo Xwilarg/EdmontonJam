@@ -11,9 +11,11 @@ namespace EdmontonJam.Manager
 
         private int _spawnId;
 
-        private void Awake()
+        private void Start()
         {
             _spawnPoints = GameObject.FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
+
+            Debug.Log($"Spawn points found: {_spawnPoints.Length}");
         }
 
         public void OnPlayerJoin(PlayerInput p)
