@@ -34616,6 +34616,7 @@ GameObject:
   - component: {fileID: 997003763}
   - component: {fileID: 997003762}
   - component: {fileID: 997003764}
+  - component: {fileID: 997003765}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -34714,6 +34715,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6f3c7fe63b8a745b4eb91bfbad2b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Manager.PlayerManager
+--- !u!114 &997003765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997003760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9573e59306695284a9643170732876ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Manager.GameManager
 --- !u!43 &1647994448
 Mesh:
   m_ObjectHideFlags: 0

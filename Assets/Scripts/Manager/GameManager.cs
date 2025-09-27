@@ -7,7 +7,7 @@ namespace EdmontonJam.Manager
     {
         public static GameManager Instance { private set; get; }
 
-        public static bool IsChasing { private set; get; }
+        public bool IsChasing { set; get; }
 
         private void Awake()
         {

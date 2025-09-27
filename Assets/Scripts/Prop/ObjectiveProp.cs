@@ -22,7 +22,9 @@ namespace EdmontonJam.Prop
 
         public void Interact(PlayerController pc)
         {
-            
+            var cpc = (CustomPlayerController)pc;
+
+            cpc.HoldObject(this);
         }
 
         public string InteractionVerb(PlayerController pc)
