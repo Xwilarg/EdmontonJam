@@ -249,7 +249,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "3c013819256cf166680aef58f8013e92910d3588"
+      "hash": "5426e34b211f48cce63f350ec02528eb86354880"
     },
     "eu.zirk.sketch.visualnovel": {
       "version": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.visualnovel",

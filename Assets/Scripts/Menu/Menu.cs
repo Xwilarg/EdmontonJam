@@ -2,7 +2,6 @@ using EdmontonJam.Grandma;
 using EdmontonJam.SO;
 using Sketch.Translation;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,7 +34,12 @@ namespace EdmontonJam.Menu
                 m.SetFloat("_HorrorLevel", 0f);
             }
 
-            Translate.Instance.SetLanguages(new string[] { "english", "french", "spanish" });
+            Translate.Instance.SetLanguages(new string[] { "english", "french", "spanish"/*, "arabic"*/ });
+            /*Translate.Instance.TranslationHook = (s) =>
+            {
+                if (Translate.Instance.CurrentLanguage == "arabic") return ArabicFixer.Fix(s);
+                return s;
+            };*/
         }
 
         public void Play()
@@ -64,6 +68,7 @@ namespace EdmontonJam.Menu
         public void SetEnglish() => Translate.Instance.CurrentLanguage = "english";
         public void SetFrench() => Translate.Instance.CurrentLanguage = "french";
         public void SetSpanish() => Translate.Instance.CurrentLanguage = "spanish";
+        public void SetArabic() => Translate.Instance.CurrentLanguage = "arabic";
 
         private IEnumerator PlayCoroutine()
         {
