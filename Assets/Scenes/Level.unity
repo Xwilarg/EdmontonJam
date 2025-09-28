@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grandma (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6585692959227384957, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
+      propertyPath: _hands
+      value: 
+      objectReference: {fileID: 284110885}
     - target: {fileID: 7752412686152191695, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -176,6 +180,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
+--- !u!4 &284110885 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3479562850389111434, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
+  m_PrefabInstance: {fileID: 97586591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &427078263
 PrefabInstance:
   m_ObjectHideFlags: 0
