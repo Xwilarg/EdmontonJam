@@ -38,8 +38,6 @@ namespace EdmontonJam.Manager
         {
             Instance = this;
 
-            Translate.Instance.SetLanguages(new string[] { "english", "french" });
-
             if (!SceneManager.GetAllScenes().Any(x => x.name == "PlayerDebugLevel"))
             {
                 if (!SceneManager.GetAllScenes().Any(x => x.name == "Level")) SceneManager.LoadScene("Level", LoadSceneMode.Additive);
