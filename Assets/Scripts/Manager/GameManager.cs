@@ -21,6 +21,7 @@ namespace EdmontonJam.Manager
                 {
                     GetComponent<PlayerInputManager>().DisableJoining();
                     ResourceManager.Instance.SetWarningText();
+                    _joinPrompt.SetActive(false);
                 }
                 _isChasing = value;
             }
@@ -29,6 +30,9 @@ namespace EdmontonJam.Manager
 
         [SerializeField]
         private ObjectivePropInfo[] _props;
+
+        [SerializeField]
+        private GameObject _joinPrompt;
 
         private void Awake()
         {
