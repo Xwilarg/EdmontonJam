@@ -10,6 +10,9 @@ namespace EdmontonJam.Prop
         [SerializeField]
         private NoiseInfo _noiseInfo;
 
+        [SerializeField]
+        private bool _isMenuDoor;
+
         private Rigidbody _rb;
         private float _noiseTimer;
 
@@ -26,6 +29,8 @@ namespace EdmontonJam.Prop
 
         private void Update()
         {
+            if (_isMenuDoor) return;
+
             if (_disllowEmitTimer > 0f)
             {
                 _disllowEmitTimer -= Time.deltaTime;
