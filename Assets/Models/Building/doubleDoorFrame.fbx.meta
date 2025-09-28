@@ -3,7 +3,17 @@ guid: c3fbcbf08fe324746845947b711925c4
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_DoubleDoor_Orange
+    second: {fileID: 2100000, guid: 8912056d11f78e74abece991818da3fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_DoulbeDoor_Brown
+    second: {fileID: 2100000, guid: c87912955b090c34fa41dc53ba05c6e6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -20,6 +20,7 @@ namespace EdmontonJam.Player
         private CharacterController _cc;
 
         public ObjectiveProp HoldedObject { set; get; }
+        private GameObject _holdedChild;
 
         public SpawnPoint AttachedSpawn { set; get; }
 
@@ -53,10 +54,9 @@ namespace EdmontonJam.Player
             Assert.IsNull(HoldedObject);
 
             HoldedObject = p;
-            p.transform.parent = _hands.transform;
-            p.transform.localPosition = Vector3.zero;
-
-            RemoveInteraction(p);
+            _holdedChild = p.transform.GetChild(0).gameObject;
+            _holdedChild.transform.parent = _hands.transform;
+            _holdedChild.transform.localPosition = Vector3.zero;
 
             if (!GameManager.Instance.IsChasing) GameManager.Instance.IsChasing = true;
         }
@@ -89,6 +89,16 @@ namespace EdmontonJam.Player
             {
                 var grandma = other.GetComponent<GrandmaController>();
                 if (grandma.IsCarryingSomeone) return;
+
+                if (HoldedObject != null)
+                {
+                    _holdedChild.transform.parent = HoldedObject.transform;
+                    _holdedChild.transform.localPosition = Vector3.zero;
+
+                    HoldedObject.WasTaken = false;
+
+                    HoldedObject = null;
+                }
 
                 _cc.enabled = false;
                 _isActive = false;

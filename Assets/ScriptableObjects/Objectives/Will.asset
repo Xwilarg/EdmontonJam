@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5217305cee252944aa06f3a2b4ce32e5, type: 3}
-  m_Name: SampleObjective
+  m_Name: Will
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.SO.ObjectivePropInfo
-  Model: {fileID: 919132149155446097, guid: e3f376e1266f94b24bf2a5561426a29f, type: 3}
+  Model: {fileID: 919132149155446097, guid: fd96143f73a4d457cbcef6fa1499c2f2, type: 3}
   AttachedNoise: {fileID: 11400000, guid: 4db6b411ed96ca447a9f2a5d876faa95, type: 2}
