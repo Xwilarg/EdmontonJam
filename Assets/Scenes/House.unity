@@ -51047,6 +51047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Prop.MainDoor
   _noiseEmitter: {fileID: 955213351}
+  _info: {fileID: 11400000, guid: b1307ca6b15673a4295101857557e781, type: 2}
 --- !u!1001 &2069655386
 PrefabInstance:
   m_ObjectHideFlags: 0

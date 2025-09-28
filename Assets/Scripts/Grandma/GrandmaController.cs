@@ -43,6 +43,13 @@ namespace EdmontonJam.Grandma
 
         public bool IsPlayerHoldingItem => _players.Any(x => x.Player.HoldedObject != null);
 
+        private void OnGUI()
+        {
+#if UNITY_EDITOR
+            GUI.Label(new Rect(10, 10, 500, 500), $"State: {State}");
+#endif
+        }
+
         /// <summary>
         /// Grandma AI's state machine
         /// </summary>
