@@ -2,6 +2,7 @@ using EdmontonJam.Prop;
 using EdmontonJam.SO;
 using Sketch.Translation;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -39,6 +40,7 @@ namespace EdmontonJam.Manager
                     ResourceManager.Instance.ShowVictoryWarning();
                 }
                 _itemLeft = value;
+                _itemLeftText.text = $"{value}/3";
             }
             get => _itemLeft;
         }
@@ -51,6 +53,9 @@ namespace EdmontonJam.Manager
 
         [SerializeField]
         private GameObject _light;
+
+        [SerializeField]
+        private TMP_Text _itemLeftText;
 
         private float _timer;
 

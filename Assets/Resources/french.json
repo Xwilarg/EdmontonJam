@@ -22,5 +22,9 @@
     "credits3": "Modélisation 3D & Animation",
     "credits4": "Programmation",
     "credits5": "Fontdiner Swanky par Font Diner",
-    "credits6": "Traductions"
+    "credits6": "Traductions",
+
+    "help1": "Trouvez 3 trésors de votre grand-mère (markeurs verts) et ramenez-les chez vous, mais ne vous faîtes pas attraper !",
+    "help2": "Baladez vous dans la maison et faîtes du bruit pour faire diversion (markeurs rouges) et ramenez ce que vous trouvez à la sortie (markeurs jaunes)",
+    "help3": "Joue avec un ami pour encore plus de fun !"
 }
