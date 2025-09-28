@@ -70,7 +70,7 @@ namespace EdmontonJam.Player
 
         public void ConsumeItem()
         {
-            Destroy(HoldedObject);
+            Destroy(HoldedObject.gameObject);
             HoldedObject = null;
         }
 

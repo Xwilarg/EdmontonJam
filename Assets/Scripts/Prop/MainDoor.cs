@@ -15,6 +15,9 @@ namespace EdmontonJam.Prop
         [SerializeField]
         private NoiseInfo _info;
 
+        [SerializeField]
+        private Rigidbody[] _rbs;
+
         private float _timer;
 
         public void Pick(CustomPlayerController cpc)
@@ -22,6 +25,15 @@ namespace EdmontonJam.Prop
             if (cpc.HoldedObject != null)
             {
                 cpc.ConsumeItem();
+                GameManager.Instance.ItemLeft--;
+
+                if (GameManager.Instance.ItemLeft == 0)
+                {
+                    foreach (var rb in _rbs)
+                    {
+                        rb.isKinematic = false;
+                    }
+                }
             }
         }
 

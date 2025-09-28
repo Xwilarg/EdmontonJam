@@ -29,6 +29,8 @@ namespace EdmontonJam.Manager
             get => _isChasing;
         }
 
+        public int ItemLeft { set; get; }
+
         [SerializeField]
         private ObjectivePropInfo[] _props;
 
@@ -69,6 +71,7 @@ namespace EdmontonJam.Manager
             {
                 spots[i].InitPropInfo(mixedProps[i]);
             }
+            ItemLeft = spots.Length;
         }
 
         private void Update()
