@@ -7,6 +7,9 @@ namespace EdmontonJam.Manager
 {
     public class PlayerManager : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject _mainCamera;
+
         private SpawnPoint[] _spawnPoints;
 
         private int _spawnId;
@@ -30,6 +33,8 @@ namespace EdmontonJam.Manager
             cc.GetComponent<CustomPlayerController>().AttachedSpawn = targetSpawn;
 
             GrandmaController.instance.Register(cc.GetComponent<CustomPlayerController>());
+
+            _mainCamera.SetActive(false);
         }
     }
 }
