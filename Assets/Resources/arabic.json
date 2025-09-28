@@ -1,0 +1,26 @@
+{
+    "language": "عربية", 
+
+    "interactionText": "Press {0} to {1}",
+    "alreadyHold": "أنت حمل القطعة ",
+    "southButton": "الزر السفلي",
+
+    "interaction_take": "احمل",
+
+    "grandmaWarning": "أيها الكر الصغير من الأفضل ألا أمسكك ",
+    "victoryWarning": "تعال لهون شكلين ما بحكي",
+    "pressToJoin": "اضغط على اي زر للانضمام",
+    "startExplanation": "خذ شي من اشياء جدتك معك عالبيت حسوني",
+    "victoryUnlocked": "الباب الخارجي مفتوح",
+
+    "grandmaKill": "!مبروك عليك قتل جدتك",
+
+    "play": "العب",
+    "credits": "ينسب الفضل",
+    "credits1": "تصميم المراحل",
+    "credits2": "برمجة متنوعة، تظليل، فن الجدة",
+    "credits3": "نمذجة ثلاثية الأبعاد والرسوم المتحركة ",
+    "credits4": "برمجة",
+    "credits5": "ينسب الفضل Fontdiner Swanky by Font Diner ",
+    "credits6": "الترجمات"
+}

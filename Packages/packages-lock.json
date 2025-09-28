@@ -7,6 +7,15 @@
       "dependencies": {},
       "hash": "770b372042728fc9df9d26ae19287cf6145d47a5"
     },
+    "com.singularitygroup.hotreload": {
+      "version": "file:com.singularitygroup.hotreload",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      }
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.9",
       "depth": 0,
@@ -242,14 +251,14 @@
       "dependencies": {
         "eu.zirk.sketch.common": "1.0.0"
       },
-      "hash": "d1051fe6ee77f5952b14f5417de336ed062b39e6"
+      "hash": "781c120ac97241159890d2b049c9f04695d54b50"
     },
     "eu.zirk.sketch.translation": {
       "version": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.translation",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "3c013819256cf166680aef58f8013e92910d3588"
+      "hash": "5426e34b211f48cce63f350ec02528eb86354880"
     },
     "eu.zirk.sketch.visualnovel": {
       "version": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.visualnovel",
