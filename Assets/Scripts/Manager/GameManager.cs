@@ -29,7 +29,7 @@ namespace EdmontonJam.Manager
             get => _isChasing;
         }
 
-        private int _itemLeft;
+        private int _itemLeft = 3;
         public int ItemLeft
         {
             set
@@ -83,7 +83,7 @@ namespace EdmontonJam.Manager
             {
                 spots[i].InitPropInfo(mixedProps[i]);
             }
-            ItemLeft = spots.Length;
+            //ItemLeft = spots.Length;
         }
 
         private void Update()

@@ -30,6 +30,8 @@ namespace EdmontonJam.Player
 
         private GameObject _ghost;
 
+        private Animator _anim;
+
         public ObjectiveProp HoldedObject { set; get; }
         private GameObject _holdedChild;
 
@@ -61,6 +63,8 @@ namespace EdmontonJam.Player
 
             _knife.SetActive(false);
 
+            _anim = GetComponentInChildren<Animator>();
+
             _ghost = Instantiate(_ghostPrefab);
             LevelManager.Instance.MoveToMinimapPosition(transform.position, _ghost);
         }
@@ -68,6 +72,8 @@ namespace EdmontonJam.Player
         protected override void Update()
         {
             base.Update();
+
+            _anim.SetBool("IsMoving", _mov.magnitude > 0f);
 
             LevelManager.Instance.MoveToMinimapPosition(transform.position, _ghost);
         }
