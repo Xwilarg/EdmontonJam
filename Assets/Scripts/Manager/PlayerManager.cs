@@ -10,6 +10,9 @@ namespace EdmontonJam.Manager
         [SerializeField]
         private GameObject _mainCamera;
 
+        [SerializeField]
+        private GameObject[] _models;
+
         private SpawnPoint[] _spawnPoints;
 
         private int _spawnId;
@@ -30,7 +33,9 @@ namespace EdmontonJam.Manager
             p.transform.rotation = targetSpawn.transform.rotation;
             cc.enabled = true;
 
-            cc.GetComponent<CustomPlayerController>().AttachedSpawn = targetSpawn;
+            var cpc = cc.GetComponent<CustomPlayerController>();
+            cpc.AttachedSpawn = targetSpawn;
+            cpc.SpawnModel(_models[_spawnId++ % _models.Length]);
 
             GrandmaController.instance.Register(cc.GetComponent<CustomPlayerController>());
 

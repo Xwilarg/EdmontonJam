@@ -23,6 +23,9 @@ namespace EdmontonJam.Player
         [SerializeField]
         private GameObject _ghostPrefab;
 
+        [SerializeField]
+        private GameObject _modelContainer;
+
         private CharacterController _cc;
 
         private GameObject _ghost;
@@ -67,6 +70,12 @@ namespace EdmontonJam.Player
             base.Update();
 
             LevelManager.Instance.MoveToMinimapPosition(transform.position, _ghost);
+        }
+
+        public void SpawnModel(GameObject gameObject)
+        {
+            var go = Instantiate(gameObject, _modelContainer.transform);
+            go.transform.localPosition = Vector3.zero;
         }
 
         public void GrabLockpick()

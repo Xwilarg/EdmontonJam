@@ -67,3 +67,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Prop.NoiseMakerProp
   _info: {fileID: 11400000, guid: bb07cb6b1abe3f44291cd6318174e495, type: 2}
+  _ghostPrefab: {fileID: 2871221072541011068, guid: 2bb0fc6d957bfd04d858209247b1b37a, type: 3}

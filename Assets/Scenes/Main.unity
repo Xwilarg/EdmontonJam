@@ -1139,6 +1139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Manager.PlayerManager
   _mainCamera: {fileID: 1151687132}
+  _models:
+  - {fileID: 7084546462636555464, guid: 0a4fde958442eab49b30fb49d59feac9, type: 3}
 --- !u!114 &997003765
 MonoBehaviour:
   m_ObjectHideFlags: 0
