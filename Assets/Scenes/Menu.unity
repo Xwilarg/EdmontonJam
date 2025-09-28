@@ -3112,6 +3112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gran_5c_Ani
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70f0b75a784b9c545b1fe5ea278a7ceb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9767,6 +9771,10 @@ PrefabInstance:
     - target: {fileID: 1379622242775951200, guid: c84d5628d55884c45b3fe964fb20e1fd, type: 3}
       propertyPath: m_Speed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477193375809933176, guid: c84d5628d55884c45b3fe964fb20e1fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3998065803976040324, guid: c84d5628d55884c45b3fe964fb20e1fd, type: 3}
       propertyPath: m_LocalPosition.x
