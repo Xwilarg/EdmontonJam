@@ -84,6 +84,12 @@ namespace EdmontonJam.Grandma
                     agent.speed = wanderSpeed;
                     agent.angularSpeed = wanderAngularSpeed;
                 }
+                else if (value == BehaviorsState.chasingNoise && !GameManager.Instance.IsChasing)
+                {
+                    agent.acceleration = wanderAcceleration;
+                    agent.speed = wanderSpeed;
+                    agent.angularSpeed = wanderAngularSpeed;
+                }
                 else if (value == BehaviorsState.chasingNoise || value == BehaviorsState.carryPlayerRoom || value == BehaviorsState.chasingPlayer)
                 {
                     agent.acceleration = wanderAcceleration * chaseSpeedMultiplier;
@@ -306,8 +312,6 @@ namespace EdmontonJam.Grandma
         /// <param name="noise"></param>
         public void noiseAlert(Onomatopiea noise)
         {
-            if (!GameManager.Instance.IsChasing) return; // We are not in hunting phase yet
-
             if (State == BehaviorsState.carryPlayerRoom || State == BehaviorsState.chasingPlayer) // Carrying or chasing a player is more important than a noise!
             {
                 return;

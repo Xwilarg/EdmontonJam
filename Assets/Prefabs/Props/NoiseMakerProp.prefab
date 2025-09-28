@@ -66,3 +66,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d563d69c1eaf542a6ca14f27b65277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Prop.NoiseMakerProp
+  _info: {fileID: 11400000, guid: bb07cb6b1abe3f44291cd6318174e495, type: 2}

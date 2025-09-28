@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bc2e0fbc1766f4286028e8169dcb16, type: 3}
+  m_Name: TV
+  m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.SO.NoiseInfo
+  NoiseForce: 15
+  Material: {fileID: 2100000, guid: f9682df9033c4374f9f8e9b414cd6760, type: 2}
