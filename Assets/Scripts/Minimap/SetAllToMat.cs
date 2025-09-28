@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace EdmontonJam.Minimap
@@ -13,11 +14,11 @@ namespace EdmontonJam.Minimap
             {
                 if (r.gameObject.name.Contains("wall", System.StringComparison.InvariantCultureIgnoreCase))
                 {
-                    r.material = _matWall;
+                    r.materials = Enumerable.Repeat(_matWall, r.materials.Length).ToArray();
                 }
                 else
                 {
-                    r.material = _matFloor;
+                    r.materials = Enumerable.Repeat(_matFloor, r.materials.Length).ToArray();
                 }
             }
         }
