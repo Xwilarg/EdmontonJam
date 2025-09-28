@@ -196,9 +196,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3479562850389111434, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.766
+      objectReference: {fileID: 0}
     - target: {fileID: 5748993323445974571, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5748993323445974571, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
       propertyPath: m_AngularSpeed
@@ -778,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70f0b75a784b9c545b1fe5ea278a7ceb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7161299
+      value: -0.918
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70f0b75a784b9c545b1fe5ea278a7ceb, type: 3}
       propertyPath: m_LocalPosition.z
