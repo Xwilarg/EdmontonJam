@@ -9,8 +9,23 @@ namespace EdmontonJam.Prop
 {
     public class ObjectiveProp : MonoBehaviour, IPickable
     {
+        [SerializeField]
+        private GameObject _ghostPrefab;
+
         private ObjectivePropInfo _info;
+        private GameObject _ghost;
         public bool WasTaken { set; get; }
+
+        private void Start()
+        {
+            _ghost = Instantiate(_ghostPrefab);
+            LevelManager.Instance.MoveToMinimapPosition(transform.position, _ghost);
+        }
+
+        public void DeleteGhost()
+        {
+            Destroy(_ghost);
+        }
 
         public void InitPropInfo(ObjectivePropInfo info)
         {

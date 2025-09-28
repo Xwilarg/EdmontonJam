@@ -23,9 +23,6 @@ namespace EdmontonJam.Menu
         private Transform _explosionPos;
 
         [SerializeField]
-        private TMP_Text _langText;
-
-        [SerializeField]
         private GameInfo _info;
 
         private bool _isPendingPlay;
@@ -38,9 +35,7 @@ namespace EdmontonJam.Menu
                 m.SetFloat("_HorrorLevel", 0f);
             }
 
-            Translate.Instance.SetLanguages(new string[] { "english", "french" });
-
-            _langText.text = "Français";
+            Translate.Instance.SetLanguages(new string[] { "english", "french", "spanish" });
         }
 
         public void Play()
@@ -66,19 +61,9 @@ namespace EdmontonJam.Menu
             }
         }
 
-        public void UpdateLanguage()
-        {
-            if (Translate.Instance.CurrentLanguage == "english")
-            {
-                Translate.Instance.CurrentLanguage = "french";
-                _langText.text = "English";
-            }
-            else if (Translate.Instance.CurrentLanguage == "french")
-            {
-                Translate.Instance.CurrentLanguage = "english";
-                _langText.text = "Français";
-            }
-        }
+        public void SetEnglish() => Translate.Instance.CurrentLanguage = "english";
+        public void SetFrench() => Translate.Instance.CurrentLanguage = "french";
+        public void SetSpanish() => Translate.Instance.CurrentLanguage = "spanish";
 
         private IEnumerator PlayCoroutine()
         {

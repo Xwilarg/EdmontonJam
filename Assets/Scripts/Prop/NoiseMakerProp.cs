@@ -11,8 +11,17 @@ namespace EdmontonJam.Prop
         [SerializeField]
         private NoiseInfo _info;
 
+        [SerializeField]
+        private GameObject _ghostPrefab;
+
         private bool _isOn;
         private float _timer;
+
+        private void Start()
+        {
+            var go = Instantiate(_ghostPrefab);
+            LevelManager.Instance.MoveToMinimapPosition(transform.position, go);
+        }
 
         public void Pick(CustomPlayerController cpc)
         {
