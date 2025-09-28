@@ -131,14 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grandma (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1742360661461530535, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
-      propertyPath: m_TagString
-      value: Grandma
-      objectReference: {fileID: 0}
-    - target: {fileID: 6585692959227384957, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
-      propertyPath: chaseSpeedMultiplier
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7752412686152191695, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
