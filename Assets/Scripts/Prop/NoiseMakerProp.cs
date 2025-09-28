@@ -17,7 +17,7 @@ namespace EdmontonJam.Prop
         private bool _isOn;
         private float _timer;
 
-        private void Awake()
+        private void Start()
         {
             var go = Instantiate(_ghostPrefab);
             LevelManager.Instance.MoveToMinimapPosition(transform.position, go);

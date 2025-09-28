@@ -15,7 +15,7 @@ namespace EdmontonJam.Prop
         private ObjectivePropInfo _info;
         public bool WasTaken { set; get; }
 
-        private void Awake()
+        private void Start()
         {
             var go = Instantiate(_ghostPrefab);
             LevelManager.Instance.MoveToMinimapPosition(transform.position, go);
