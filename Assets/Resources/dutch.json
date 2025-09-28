@@ -1,0 +1,30 @@
+{
+    "language": "Nederlands",
+
+    "interactionText": "Druk op {0} om {1}",
+    "alreadyHold": "Je houdt al een voorwerp vast",
+    "southButton": "omlaag",
+
+    "interaction_take": "mee te nemen",
+
+    "grandmaWarning": "Ik krijg je maar beter niet te pakken kleine snotneus",
+    "victoryWarning": "Kom hier, laat het me geen twee keer zeggen",
+    "pressToJoin": "Druk op een knop om deel te nemen",
+    "startExplanation": "Om te beginnen neem één van de schatten van grootmoeder mee naar huis",
+    "victoryUnlocked": "Hoofddeur is nu ontgrendeld",
+
+    "grandmaKill": "Je hebt grootmoeder gedood, gefeliciteerd!",
+
+    "play": "Spelen",
+    "credits": "Credits",
+    "credits1": "Level design",
+    "credits2": "Misc coding, shaders, grandma art",
+    "credits3": "3D Modeling & Animation",
+    "credits4": "Programming",
+    "credits5": "Fontdiner Swanky by Font Diner",
+    "credits6": "Translations",
+
+    "help1": "Vind 3 schatten van je grootmoeder (groene markeringen) en neem ze mee naar huis, maar zorg dat je niet gepakt wordt!",
+    "help2": "Ren rond in haar huis en maak lawaai om haar af te leiden (rode markeringen) breng daarna wat je gevonden hebt naar de uitgang (gele markeringen)",
+    "help3": "Speel samen met vrienden voor de beste ervaring!"
+}
