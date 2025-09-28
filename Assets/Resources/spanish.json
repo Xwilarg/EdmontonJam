@@ -1,0 +1,26 @@
+{
+    "language": "«Español»",
+
+    "interactionText": "Pulsa {0} hacia {1}",
+    "alreadyHold": "Ya estás sosteniendo un objeto",
+    "southButton": "botón de abajo",
+
+    "interaction_take": "«Tomalo",
+
+    "grandmaWarning": "Pequeño granuja, más te vale que no te alcance",
+    "victoryWarning": "Vuelve aquí, no lo diré dos veces",
+    "pressToJoin": "Pulsa cualquier botón para unirte",
+    "startExplanation": "Para empezar, llévate uno de los tesoros de la abuela de vuelta a casa",
+    "victoryUnlocked": "La puerta principal ya está desbloqueada",
+
+    "grandmaKill": "¡Has matado a la abuela, Felicidades!",
+
+    "play": "Jugar",
+    "credits": "Créditos",
+    "credits1": "Diseño de niveles",
+    "credits2": "Programacion Misc, sombras, arte de la abuela",
+    "credits3": "Modelado 3D y animación",
+    "credits4": "Programación",
+    "credits5": "Fontdiner Swanky por Font Diner",
+    "credits6": "Traducciones"
+}

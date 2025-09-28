@@ -35,7 +35,7 @@ namespace EdmontonJam.Menu
                 m.SetFloat("_HorrorLevel", 0f);
             }
 
-            Translate.Instance.SetLanguages(new string[] { "english", "french" });
+            Translate.Instance.SetLanguages(new string[] { "english", "french", "spanish" });
         }
 
         public void Play()
@@ -63,6 +63,7 @@ namespace EdmontonJam.Menu
 
         public void SetEnglish() => Translate.Instance.CurrentLanguage = "english";
         public void SetFrench() => Translate.Instance.CurrentLanguage = "french";
+        public void SetSpanish() => Translate.Instance.CurrentLanguage = "spanish";
 
         private IEnumerator PlayCoroutine()
         {
