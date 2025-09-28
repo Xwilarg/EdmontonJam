@@ -4,6 +4,7 @@ using Sketch.Translation;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace EdmontonJam.Manager
 {
@@ -34,6 +35,12 @@ namespace EdmontonJam.Manager
             Instance = this;
 
             Translate.Instance.SetLanguages(new string[] { "english", "french" });
+
+            if (!SceneManager.GetAllScenes().Any(x => x.name == "PlayerDebugLevel"))
+            {
+                if (!SceneManager.GetAllScenes().Any(x => x.name == "Level")) SceneManager.LoadScene("Level", LoadSceneMode.Additive);
+                if (!SceneManager.GetAllScenes().Any(x => x.name == "House")) SceneManager.LoadScene("House", LoadSceneMode.Additive);
+            }
         }
 
         private void Start()
