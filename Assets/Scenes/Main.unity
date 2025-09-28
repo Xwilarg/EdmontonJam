@@ -626,6 +626,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Manager.GameManager
   _props:
   - {fileID: 11400000, guid: 18484e7421bb6e84bbf312330d7f75e8, type: 2}
+  - {fileID: 11400000, guid: c2e1de0bcfa6f554cb4622d43a059ae2, type: 2}
+  - {fileID: 11400000, guid: 73ab6e3c41018584aa06fecd9c4069a6, type: 2}
+  - {fileID: 11400000, guid: 76516e9019403424ab998b83503fd0e2, type: 2}
+  - {fileID: 11400000, guid: 2c0920451afe2104a86208603247f426, type: 2}
   _joinPrompt: {fileID: 812192044}
 --- !u!114 &997003766
 MonoBehaviour:
