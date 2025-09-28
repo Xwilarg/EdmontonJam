@@ -20,6 +20,9 @@ namespace EdmontonJam.Manager
         [SerializeField]
         private GameObject _victoryText;
 
+        [SerializeField]
+        private GameObject _victoryContainer;
+
         public GameInfo GameInfo => _gameInfo;
 
         private bool _isWaitingDeletion;
@@ -31,6 +34,8 @@ namespace EdmontonJam.Manager
             _warning.DisplaySpeedRef = .1f;
 
             _victoryText.SetActive(false);
+
+            _victoryContainer.SetActive(false);
         }
 
         private void Update()
@@ -59,6 +64,11 @@ namespace EdmontonJam.Manager
             _warning.gameObject.SetActive(true);
             _warning.ToDisplay = Translate.Instance.Tr("grandmaWarning");
             _isWaitingDeletion = false;
+        }
+
+        public void ShowVictory()
+        {
+            _victoryContainer.SetActive(true);
         }
     }
 }

@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugItem
       objectReference: {fileID: 0}
+    - target: {fileID: 5387312871263432717, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6149716135113272149, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18
@@ -299,7 +303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5387312871263432717, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5826462230848100617, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_IsTrigger
@@ -369,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5387312871263432717, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5826462230848100617, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_IsTrigger
@@ -598,7 +602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5387312871263432717, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6149716135113272149, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_LocalPosition.x
@@ -773,7 +777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5387312871263432717, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6149716135113272149, guid: 00664dd702483bb47bbf5bd0fbe48011, type: 3}
       propertyPath: m_LocalPosition.x

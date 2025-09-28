@@ -109,23 +109,31 @@ namespace EdmontonJam.Player
 
             if (GameManager.Instance.IsChasing && other.CompareTag("Grandma"))
             {
-                var grandma = other.GetComponent<GrandmaController>();
-                if (grandma.IsCarryingSomeone || !grandma.CanCarry(this)) return;
-
-                if (HoldedObject != null)
+                if (HasKnife)
                 {
-                    _holdedChild.transform.parent = HoldedObject.transform;
-                    _holdedChild.transform.localPosition = Vector3.zero;
-
-                    HoldedObject.WasTaken = false;
-
-                    HoldedObject = null;
+                    ResourceManager.Instance.ShowVictory();
+                    Destroy(GrandmaController.instance.gameObject);
                 }
+                else
+                {
+                    var grandma = other.GetComponent<GrandmaController>();
+                    if (grandma.IsCarryingSomeone || !grandma.CanCarry(this)) return;
 
-                _cc.enabled = false;
-                _isActive = false;
-                transform.rotation = other.transform.rotation;
-                grandma.Carry(this);
+                    if (HoldedObject != null)
+                    {
+                        _holdedChild.transform.parent = HoldedObject.transform;
+                        _holdedChild.transform.localPosition = Vector3.zero;
+
+                        HoldedObject.WasTaken = false;
+
+                        HoldedObject = null;
+                    }
+
+                    _cc.enabled = false;
+                    _isActive = false;
+                    transform.rotation = other.transform.rotation;
+                    grandma.Carry(this);
+                } 
             }
         }
     }
