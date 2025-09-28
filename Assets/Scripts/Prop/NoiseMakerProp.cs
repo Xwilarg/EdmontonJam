@@ -27,6 +27,8 @@ namespace EdmontonJam.Prop
 
         private void Update()
         {
+            if (!_isOn) return;
+
             _timer -= Time.deltaTime;
 
             if (_timer <= 0f)
