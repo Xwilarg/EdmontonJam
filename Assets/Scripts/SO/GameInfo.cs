@@ -7,5 +7,6 @@ namespace EdmontonJam.SO
     {
         public float LockpickReloadTime;
         public float MinDoorMagnitudeForNoise;
+        public Material[] _horrorMats;
     }
 }

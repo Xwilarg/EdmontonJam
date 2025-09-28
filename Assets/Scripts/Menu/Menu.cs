@@ -1,4 +1,5 @@
 using EdmontonJam.Grandma;
+using EdmontonJam.SO;
 using Sketch.Translation;
 using System.Collections;
 using TMPro;
@@ -24,11 +25,19 @@ namespace EdmontonJam.Menu
         [SerializeField]
         private TMP_Text _langText;
 
+        [SerializeField]
+        private GameInfo _info;
+
         private bool _isPendingPlay;
         private bool _isPendingCredits;
 
         private void Awake()
         {
+            foreach (var m in _info._horrorMats)
+            {
+                m.SetFloat("_HorrorLevel", 0f);
+            }
+
             Translate.Instance.SetLanguages(new string[] { "english", "french" });
 
             _langText.text = "Français";

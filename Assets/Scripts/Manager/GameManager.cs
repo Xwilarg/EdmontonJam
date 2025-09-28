@@ -22,6 +22,7 @@ namespace EdmontonJam.Manager
                     GetComponent<PlayerInputManager>().DisableJoining();
                     ResourceManager.Instance.SetWarningText();
                     foreach (var jp in _joinPrompts) jp.SetActive(false);
+                    _light.SetActive(false);
                 }
                 _isChasing = value;
             }
@@ -33,6 +34,11 @@ namespace EdmontonJam.Manager
 
         [SerializeField]
         private GameObject[] _joinPrompts;
+
+        [SerializeField]
+        private GameObject _light;
+
+        private float _timer;
 
         private void Awake()
         {
@@ -62,6 +68,26 @@ namespace EdmontonJam.Manager
             for (int i = 0; i < spots.Length; i++)
             {
                 spots[i].InitPropInfo(mixedProps[i]);
+            }
+        }
+
+        private void Update()
+        {
+            if (IsChasing && _timer < 1f)
+            {
+                _timer += Time.deltaTime * .1f;
+                foreach (var m in ResourceManager.Instance.GameInfo._horrorMats)
+                {
+                    m.SetFloat("_HorrorLevel", Mathf.Clamp01(_timer));
+                }
+            }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var m in ResourceManager.Instance.GameInfo._horrorMats)
+            {
+                m.SetFloat("_HorrorLevel", 0f);
             }
         }
     }

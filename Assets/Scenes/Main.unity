@@ -893,7 +893,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 73ab6e3c41018584aa06fecd9c4069a6, type: 2}
   - {fileID: 11400000, guid: 76516e9019403424ab998b83503fd0e2, type: 2}
   - {fileID: 11400000, guid: 2c0920451afe2104a86208603247f426, type: 2}
-  _joinPrompts: []
+  _joinPrompts:
+  - {fileID: 812192044}
+  - {fileID: 860230445}
+  _light: {fileID: 2096113863}
 --- !u!114 &997003766
 MonoBehaviour:
   m_ObjectHideFlags: 0

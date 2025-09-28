@@ -14,3 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.SO.GameInfo
   LockpickReloadTime: 5
   MinDoorMagnitudeForNoise: 0.1
+  _horrorMats:
+  - {fileID: 2100000, guid: 8912056d11f78e74abece991818da3fd, type: 2}
+  - {fileID: 2100000, guid: c87912955b090c34fa41dc53ba05c6e6, type: 2}
+  - {fileID: 2100000, guid: a23d83cb4f5283c44bfc7354da03c830, type: 2}
+  - {fileID: 2100000, guid: bed9df3d063bc0e4cb58b46119a31ac7, type: 2}
+  - {fileID: 2100000, guid: 2affac089f2e39b49892cf65ac4c324a, type: 2}
+  - {fileID: 2100000, guid: db373d403bfede54da64ad41488b7b95, type: 2}
+  - {fileID: 2100000, guid: ff9684b99b9e36a49b8120aa3e77d5e3, type: 2}
+  - {fileID: 2100000, guid: 4e9a834f4e2c06347a3415e625b651d1, type: 2}
+  - {fileID: 2100000, guid: 500fe7e723b574a4ba38225e1b23f64e, type: 2}
+  - {fileID: 2100000, guid: 12807ca3e813ca14599d9bc7136e52ad, type: 2}
+  - {fileID: 2100000, guid: 9cc77f8231ebfce439a51f876876770d, type: 2}
+  - {fileID: 2100000, guid: 31a678f9bb2e37e47858940050004e20, type: 2}

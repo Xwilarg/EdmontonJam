@@ -1406,6 +1406,7 @@ MonoBehaviour:
   - {fileID: 490137848}
   _explosionPos: {fileID: 2047845275}
   _langText: {fileID: 682042799}
+  _info: {fileID: 11400000, guid: 310a3b23a16eb23479d559ac92db5774, type: 2}
 --- !u!1 &368761460
 GameObject:
   m_ObjectHideFlags: 0
