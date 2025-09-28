@@ -29,7 +29,19 @@ namespace EdmontonJam.Manager
             get => _isChasing;
         }
 
-        public int ItemLeft { set; get; }
+        private int _itemLeft;
+        public int ItemLeft
+        {
+            set
+            {
+                if (value == 0)
+                {
+                    ResourceManager.Instance.ShowVictoryWarning();
+                }
+                _itemLeft = value;
+            }
+            get => _itemLeft;
+        }
 
         [SerializeField]
         private ObjectivePropInfo[] _props;

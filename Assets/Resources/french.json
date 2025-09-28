@@ -8,8 +8,10 @@
     "interaction_take": "prendre",
 
     "grandmaWarning": "Petits chenapans, vous allez voir si je vous attrape",
+    "victoryWarning": "Reviens ici, je ne le dirai pas deux fois",
     "pressToJoin": "Appuyez sur un bouton pour rejoindre",
-    "startExplanation": "Pour commencer, prenez un des trésors de grand-mère à <la maison",
+    "startExplanation": "Pour commencer, prenez un des trésors de grand-mère à la maison",
+    "victoryUnlocked": "La porte d'entrée est maintenant déverouillée",
 
     "play": "Jouer",
     "credits": "Crédits",

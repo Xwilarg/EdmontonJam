@@ -17,6 +17,9 @@ namespace EdmontonJam.Manager
         [SerializeField]
         private TextDisplay _warning;
 
+        [SerializeField]
+        private GameObject _victoryText;
+
         public GameInfo GameInfo => _gameInfo;
 
         private bool _isWaitingDeletion;
@@ -47,6 +50,13 @@ namespace EdmontonJam.Manager
         {
             _warning.gameObject.SetActive(true);
             _warning.ToDisplay = Translate.Instance.Tr("grandmaWarning");
+        }
+
+        public void ShowVictoryWarning()
+        {
+            _warning.gameObject.SetActive(true);
+            _warning.ToDisplay = Translate.Instance.Tr("grandmaWarning");
+            _isWaitingDeletion = false;
         }
     }
 }

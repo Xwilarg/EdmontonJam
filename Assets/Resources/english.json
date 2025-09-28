@@ -8,8 +8,10 @@
     "interaction_take": "take",
 
     "grandmaWarning": "You little whippersnapper I better not catch you",
+    "victoryWarning": "Come back here I won't say it twice",
     "pressToJoin": "Press any button to join",
     "startExplanation": "To start, take one of grandma treasure back home",
+    "victoryUnlocked": "Main door is now unlocked",
 
     "play": "Play",
     "credits": "Credits",
