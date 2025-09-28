@@ -50,6 +50,8 @@ namespace EdmontonJam.Grandma
 #endif
         }
 
+        public bool CanCarry(CustomPlayerController cpc) => _players.First(x => x.Player.GetInstanceID() == cpc.GetInstanceID()).IgnoreTimer <= 0f;
+
         /// <summary>
         /// Grandma AI's state machine
         /// </summary>
@@ -213,6 +215,8 @@ namespace EdmontonJam.Grandma
                 if (Vector3.Distance(_carriedPlayer.AttachedSpawn.transform.position, transform.position) < 2.5f)
                 {
                     State = BehaviorsState.wandering;
+
+                    _players.First(x => x.Player.GetInstanceID() == _carriedPlayer.GetInstanceID()).IgnoreTimer = 5f;
 
                     _carriedPlayer.Drop();
                     _carriedPlayer = null;

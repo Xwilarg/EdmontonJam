@@ -131,10 +131,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grandma (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5748993323445974571, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 6585692959227384957, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
       propertyPath: _hands
       value: 
       objectReference: {fileID: 284110885}
+    - target: {fileID: 6585692959227384957, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
+      propertyPath: chaseSpeedMultiplier
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7752412686152191695, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
