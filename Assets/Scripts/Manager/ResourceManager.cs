@@ -29,6 +29,8 @@ namespace EdmontonJam.Manager
             Instance = this;
             _warning.gameObject.SetActive(false);
             _warning.DisplaySpeedRef = .1f;
+
+            _victoryText.SetActive(false);
         }
 
         private void Update()

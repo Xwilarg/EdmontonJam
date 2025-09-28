@@ -17,6 +17,9 @@ namespace EdmontonJam.Player
         [SerializeField]
         private TMP_Text _lockpickText;
 
+        [SerializeField]
+        private GameObject _knife;
+
         private CharacterController _cc;
 
         public ObjectiveProp HoldedObject { set; get; }
@@ -24,6 +27,15 @@ namespace EdmontonJam.Player
 
         public SpawnPoint AttachedSpawn { set; get; }
 
+        private bool _hasKnife
+        {
+            set
+            {
+                _hasKnife = value;
+                _knife.SetActive(value);
+            }
+            get => _hasKnife;
+        }
         public bool HasKnife { set; get; }
 
         private int _lockpickCount;
@@ -38,6 +50,8 @@ namespace EdmontonJam.Player
             _cc = GetComponent<CharacterController>();
 
             UpdateUI();
+
+            _knife.SetActive(false);
         }
 
         public void GrabLockpick()
