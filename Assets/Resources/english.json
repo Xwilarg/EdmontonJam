@@ -7,5 +7,12 @@
 
     "interaction_take": "take",
 
-    "grandmaWarning": "You little whippersnapper I better not catch you"
+    "grandmaWarning": "You little whippersnapper I better not catch you",
+
+    "play": "Play",
+    "credits": "Credits",
+    "credits1": "Level design",
+    "credits2": "Misc coding, shaders, grandma art",
+    "credits3": "3D Modeling & Animation",
+    "credits4": "Programming"
 }

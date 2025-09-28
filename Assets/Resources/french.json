@@ -7,5 +7,12 @@
 
     "interaction_take": "prendre",
 
-    "grandmaWarning": "Petits chenapans, vous allez voir si je vous attrape"
+    "grandmaWarning": "Petits chenapans, vous allez voir si je vous attrape",
+
+    "play": "Jouer",
+    "credits": "Crédits",
+    "credits1": "Level design",
+    "credits2": "Shaders, art de la grand-mère et code",
+    "credits3": "Modélisation 3D & Animation",
+    "credits4": "Programmation"
 }
