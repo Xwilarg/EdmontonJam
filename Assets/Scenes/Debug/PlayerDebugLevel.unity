@@ -1438,6 +1438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1048877112125033290, guid: 33e0ce19bb7186a47ac6556f1ce8e454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4525326849762800440, guid: 33e0ce19bb7186a47ac6556f1ce8e454, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1830,7 +1834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1415161236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2175,6 +2179,10 @@ PrefabInstance:
     - target: {fileID: 1048877112125033290, guid: 33e0ce19bb7186a47ac6556f1ce8e454, type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048877112125033290, guid: 33e0ce19bb7186a47ac6556f1ce8e454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4525326849762800440, guid: 33e0ce19bb7186a47ac6556f1ce8e454, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2780,7 +2788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2001282510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3479,6 +3487,10 @@ PrefabInstance:
     - target: {fileID: 1048877112125033290, guid: 33e0ce19bb7186a47ac6556f1ce8e454, type: 3}
       propertyPath: m_Name
       value: Wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048877112125033290, guid: 33e0ce19bb7186a47ac6556f1ce8e454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4525326849762800440, guid: 33e0ce19bb7186a47ac6556f1ce8e454, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

@@ -10,7 +10,7 @@ namespace EdmontonJam.Prop
     public class ObjectiveProp : MonoBehaviour, IPickable
     {
         private ObjectivePropInfo _info;
-        private bool _wasTaken;
+        public bool WasTaken { set; get; }
 
         public void InitPropInfo(ObjectivePropInfo info)
         {
@@ -28,9 +28,7 @@ namespace EdmontonJam.Prop
 
         public void Pick(CustomPlayerController cpc)
         {
-            var cpc = (CustomPlayerController)pc;
-
-            _wasTaken = true;
+            WasTaken = true;
             cpc.HoldObject(this);
 
             NoiseManager.Instance.SpawnNoise(transform.position, _info.AttachedNoise, null);

@@ -58,8 +58,6 @@ namespace EdmontonJam.Player
             _holdedChild.transform.parent = _hands.transform;
             _holdedChild.transform.localPosition = Vector3.zero;
 
-            RemoveInteraction(p);
-
             if (!GameManager.Instance.IsChasing) GameManager.Instance.IsChasing = true;
         }
 
@@ -96,6 +94,8 @@ namespace EdmontonJam.Player
                 {
                     _holdedChild.transform.parent = HoldedObject.transform;
                     _holdedChild.transform.localPosition = Vector3.zero;
+
+                    HoldedObject.WasTaken = false;
 
                     HoldedObject = null;
                 }
