@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5d6a7c23197c344a3578e973cfbb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grandma
-  _hands: {fileID: 0}
+  _hands: {fileID: 3479562850389111434}
   wanderSpeed: 2
   wanderAngularSpeed: 100
   wanderAcceleration: 5
