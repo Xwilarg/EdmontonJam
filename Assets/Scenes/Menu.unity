@@ -8016,7 +8016,9 @@ MonoBehaviour:
     Jadith Bruzenak -
     {credits3}
 
-    Christian Chaux - {credits4}'
+    Christian Chaux - {credits4}
+
+    {credits5}'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7c502c25b00b914ba7eb9571c65992e, type: 2}
   m_sharedMaterial: {fileID: -3826003271351437268, guid: f7c502c25b00b914ba7eb9571c65992e, type: 2}
