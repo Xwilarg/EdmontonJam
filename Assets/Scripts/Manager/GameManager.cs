@@ -40,7 +40,7 @@ namespace EdmontonJam.Manager
                     ResourceManager.Instance.ShowVictoryWarning();
                 }
                 _itemLeft = value;
-                _itemLeftText.text = $"{value}/3";
+                _itemLeftText.text = $"{3 - value}/3";
             }
             get => _itemLeft;
         }
