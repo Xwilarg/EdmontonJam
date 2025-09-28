@@ -20,7 +20,12 @@ namespace EdmontonJam.Player
         [SerializeField]
         private GameObject _knife;
 
+        [SerializeField]
+        private GameObject _ghostPrefab;
+
         private CharacterController _cc;
+
+        private GameObject _ghost;
 
         public ObjectiveProp HoldedObject { set; get; }
         private GameObject _holdedChild;
@@ -52,6 +57,16 @@ namespace EdmontonJam.Player
             UpdateUI();
 
             _knife.SetActive(false);
+
+            _ghost = Instantiate(_ghostPrefab);
+            LevelManager.Instance.MoveToMinimapPosition(transform.position, _ghost);
+        }
+
+        protected override void Update()
+        {
+            base.Update();
+
+            LevelManager.Instance.MoveToMinimapPosition(transform.position, _ghost);
         }
 
         public void GrabLockpick()

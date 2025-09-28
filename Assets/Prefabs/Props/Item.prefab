@@ -66,3 +66,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e1f234c1db30f4392960db5a07c380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Prop.ObjectiveProp
+  _ghostPrefab: {fileID: 2871221072541011068, guid: 9cf960c68c2e83e4ca5c3e2392fa1843, type: 3}

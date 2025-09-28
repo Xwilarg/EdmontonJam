@@ -1263,6 +1263,7 @@ MonoBehaviour:
   _hands: {fileID: 6907445081375814605}
   _lockpickText: {fileID: 3791202181436512527}
   _knife: {fileID: 5001554665180893082}
+  _ghostPrefab: {fileID: 2871221072541011068, guid: 97c2d7b68a55ff04f917ca61de21902b, type: 3}
 --- !u!54 &-2108528690185170491
 Rigidbody:
   m_ObjectHideFlags: 0
