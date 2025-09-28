@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.Prop.Door
   _noiseInfo: {fileID: 11400000, guid: 2d60bb4b9fae04747bb381a99f6cb0ae, type: 2}
+  _isMenuDoor: 0
 --- !u!1001 &606635821765743448
 PrefabInstance:
   m_ObjectHideFlags: 0
