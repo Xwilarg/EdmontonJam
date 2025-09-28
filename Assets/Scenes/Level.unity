@@ -218,7 +218,7 @@ PrefabInstance:
       objectReference: {fileID: 284110885}
     - target: {fileID: 6585692959227384957, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
       propertyPath: chaseSpeedMultiplier
-      value: 7.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6585692959227384957, guid: de2586836f332654cb7bcc1adde32f03, type: 3}
       propertyPath: _seePlayerClips.Array.size
