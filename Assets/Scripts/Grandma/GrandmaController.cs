@@ -117,7 +117,8 @@ namespace EdmontonJam.Grandma
         float noiseChaseTimer = 0;
         float examineNoiseTimer = 0;
         float chasingTimer = 0;
-        private const float ChasingTimerRef = 1f;
+        private const float ChasingTimerRef = .1f;
+        float _keepFollowTimer;
 
         private void OnDrawGizmos()
         {
@@ -157,6 +158,8 @@ namespace EdmontonJam.Grandma
                             _chasedPlayer = player.Player;
                             State = BehaviorsState.chasingPlayer;
                             chasingTimer = ChasingTimerRef;
+
+                            _keepFollowTimer = 1f;
 
                             agent.SetDestination(player.Player.transform.position);
                             break;
@@ -242,13 +245,19 @@ namespace EdmontonJam.Grandma
                         chasingTimer = ChasingTimerRef;
 
                         agent.SetDestination(_chasedPlayer.transform.position);
+                        _keepFollowTimer = 1f;
                     }
                     else
                     {
-                        // LoS lost
-                        State = BehaviorsState.wandering;
-                        _players.First(x => x.PlayerGO.GetInstanceID() == _chasedPlayer.gameObject.GetInstanceID()).IgnoreTimer = 5f;
-                        _chasedPlayer = null;
+                        _keepFollowTimer -= Time.deltaTime;
+
+                        if (_keepFollowTimer <= 0f)
+                        {
+                            // LoS lost
+                            State = BehaviorsState.wandering;
+                            _players.First(x => x.PlayerGO.GetInstanceID() == _chasedPlayer.gameObject.GetInstanceID()).IgnoreTimer = 5f;
+                            _chasedPlayer = null;
+                        }
                     }
                 }
             }
