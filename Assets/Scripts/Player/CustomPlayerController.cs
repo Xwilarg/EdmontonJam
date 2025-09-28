@@ -24,6 +24,8 @@ namespace EdmontonJam.Player
 
         public SpawnPoint AttachedSpawn { set; get; }
 
+        public bool HasKnife { set; get; }
+
         private int _lockpickCount;
 
         private bool _isActive = true;
