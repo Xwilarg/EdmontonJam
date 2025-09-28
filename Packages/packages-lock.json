@@ -242,7 +242,7 @@
       "dependencies": {
         "eu.zirk.sketch.common": "1.0.0"
       },
-      "hash": "d1051fe6ee77f5952b14f5417de336ed062b39e6"
+      "hash": "781c120ac97241159890d2b049c9f04695d54b50"
     },
     "eu.zirk.sketch.translation": {
       "version": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.translation",

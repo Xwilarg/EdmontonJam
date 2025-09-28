@@ -8680,7 +8680,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "nour - {credits1}\nMike Dardis - {credits2}\nJadith Bruzenak - {credits3}\nChristian
-    Chaux - {credits4}\n{credits5}\n{credits6}\nEspa\xF1ol - NehNeh"
+    Chaux - {credits4}\n{credits5}\n{credits6}\nEspa\xF1ol - NehNehDes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7c502c25b00b914ba7eb9571c65992e, type: 2}
   m_sharedMaterial: {fileID: -3826003271351437268, guid: f7c502c25b00b914ba7eb9571c65992e, type: 2}
