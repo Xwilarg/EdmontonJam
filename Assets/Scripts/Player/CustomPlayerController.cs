@@ -27,7 +27,8 @@ namespace EdmontonJam.Player
 
         public SpawnPoint AttachedSpawn { set; get; }
 
-        private bool _hasKnife
+        private bool _hasKnife;
+        public bool HasKnife
         {
             set
             {
@@ -36,7 +37,6 @@ namespace EdmontonJam.Player
             }
             get => _hasKnife;
         }
-        public bool HasKnife { set; get; }
 
         private int _lockpickCount;
 
