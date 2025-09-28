@@ -116,6 +116,7 @@ namespace EdmontonJam.Player
 
         public void ConsumeItem()
         {
+            HoldedObject.DeleteGhost();
             Destroy(_holdedChild);
             HoldedObject = null;
         }
