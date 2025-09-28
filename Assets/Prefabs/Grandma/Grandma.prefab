@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5d6a7c23197c344a3578e973cfbb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grandma
+  _hands: {fileID: 0}
   wanderSpeed: 2
   wanderAngularSpeed: 100
   wanderAcceleration: 5
@@ -156,7 +157,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!54 &7048460731170436471
 Rigidbody:
   m_ObjectHideFlags: 0

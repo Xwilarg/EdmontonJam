@@ -40,6 +40,7 @@ namespace EdmontonJam.Noise
         /// Where grandma will run to
         /// </summary>
         public Vector3 noiseSourcePosition;
+        public INoiseMaker Source { set; get; }
 
 
 

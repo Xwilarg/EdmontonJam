@@ -10,6 +10,9 @@ namespace EdmontonJam.Prop
         [SerializeField]
         private NoiseInfo _noiseInfo;
 
+        [SerializeField]
+        private bool _isMenuDoor;
+
         private Rigidbody _rb;
         private float _noiseTimer;
 
@@ -26,6 +29,8 @@ namespace EdmontonJam.Prop
 
         private void Update()
         {
+            if (_isMenuDoor) return;
+
             if (_disllowEmitTimer > 0f)
             {
                 _disllowEmitTimer -= Time.deltaTime;
@@ -35,11 +40,11 @@ namespace EdmontonJam.Prop
             {
                 _noiseTimer -= Time.deltaTime;
             }
-            else if (_rb.angularVelocity.magnitude > ResourceManager.Instance.GameInfo.MinDoorMagnitudeForNoise && _disllowEmitTimer <= 0f)
+            else if (_rb.angularVelocity.magnitude > ResourceManager.Instance.GameInfo.MinDoorMagnitudeForNoise)
             {
                 _noiseTimer = .5f;
 
-                NoiseManager.Instance.SpawnNoise(transform.position, _noiseInfo);
+                NoiseManager.Instance.SpawnNoise(transform.position, _noiseInfo, this, _disllowEmitTimer <= 0f);
             }
         }
     }

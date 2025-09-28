@@ -22,7 +22,7 @@ namespace EdmontonJam.Manager
             go.GetComponentInChildren<Renderer>().material = mat;
         }
 
-        public void SpawnNoise(Vector3 startPos, NoiseInfo nInfo, bool chase = true)
+        public void SpawnNoise(Vector3 startPos, NoiseInfo nInfo, INoiseMaker source, bool chase = true)
         {
             startPos.y = 1f;
 
@@ -34,6 +34,7 @@ namespace EdmontonJam.Manager
                 chaserNoise.GrandmaChaser = true;
                 chaserNoise.noiseSourcePosition = startPos;
                 chaserNoise.NoiseInfo = nInfo;
+                chaserNoise.Source = source;
                 SetMaterial(go, nInfo.Material);
                 go.transform.localScale = Vector3.one * (Mathf.Clamp01(nInfo.NoiseForce / 5f) / 2 + .5f);
             }
