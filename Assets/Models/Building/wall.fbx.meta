@@ -3,7 +3,17 @@ guid: 40eae83ece7a143efbb5fde2e4a5cab2
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Wall_Trim_Brown
+    second: {fileID: 2100000, guid: ff9684b99b9e36a49b8120aa3e77d5e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Walls_Yellow
+    second: {fileID: 2100000, guid: 12807ca3e813ca14599d9bc7136e52ad, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
