@@ -3,7 +3,27 @@ guid: a922ce4c7b045594db5827bf52d2e087
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassesBlack'
+    second: {fileID: 2100000, guid: fd851a5968184fd44b0ddee21d0126de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassesLenses
+    second: {fileID: 2100000, guid: e4c9d3ce314f1a841b08c1f7c58834f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Granmat
+    second: {fileID: 2100000, guid: 499596b69a2b9c14e85e37d62e05ecc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hair
+    second: {fileID: 2100000, guid: 38dbdd0062a170c429de4ae5a99c9271, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
