@@ -41,6 +41,8 @@ namespace EdmontonJam.Grandma
 
         private readonly List<PlayerChaseInfo> _players = new();
 
+        public bool IsPlayerHoldingItem => _players.Any(x => x.Player.HoldedObject != null);
+
         /// <summary>
         /// Grandma AI's state machine
         /// </summary>

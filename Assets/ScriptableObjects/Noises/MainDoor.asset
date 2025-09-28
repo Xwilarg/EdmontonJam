@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59bc2e0fbc1766f4286028e8169dcb16, type: 3}
-  m_Name: SampleObjectiveNoise
+  m_Name: MainDoor
   m_EditorClassIdentifier: Assembly-CSharp::EdmontonJam.SO.NoiseInfo
-  NoiseForce: 10
-  Material: {fileID: 2100000, guid: 23d281c99ed141442b1bb8e3ca91a3d6, type: 2}
+  NoiseForce: 1
+  Material: {fileID: 2100000, guid: 4cf9f6964ddecf34984ea4f361961a08, type: 2}

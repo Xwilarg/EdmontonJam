@@ -68,6 +68,12 @@ namespace EdmontonJam.Player
             transform.parent = null;
         }
 
+        public void ConsumeItem()
+        {
+            Destroy(HoldedObject);
+            HoldedObject = null;
+        }
+
         public override string GetInteractionText(string interactionVerb)
         {
             return Translate.Instance.Tr("interactionText", _pInput.currentControlScheme == "Keyboard&Mouse" ? "E" : Translate.Instance.Tr("southButton"), Translate.Instance.Tr(interactionVerb));
