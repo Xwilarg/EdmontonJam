@@ -35,6 +35,11 @@ namespace EdmontonJam.Grandma
 
         public static GrandmaController instance;
 
+        private AudioSource _source;
+
+        [SerializeField]
+        private AudioClip[] _seePlayerClips;
+
         // Info of the noise we are currently chasing
         private Onomatopiea _ono;
         private NoiseInfo _noiseInfo;
@@ -111,6 +116,8 @@ namespace EdmontonJam.Grandma
             if (instance != null)
                 Debug.LogError("2 grandma instances in the scene! Should only be 1! The second instance is " + this);
             instance = this;
+
+            _source = GetComponent<AudioSource>();
         }
 
         float wanderTimer = 0;
@@ -162,6 +169,8 @@ namespace EdmontonJam.Grandma
                             _keepFollowTimer = 1f;
 
                             agent.SetDestination(player.Player.transform.position);
+
+                            _source.PlayOneShot(_seePlayerClips[Random.Range(0, _seePlayerClips.Length)]);
                             break;
                         }
                     }
